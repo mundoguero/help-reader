@@ -1,9 +1,9 @@
-////
-////  File.swift
-////  help reader
-////
-////  Created by Jonatas Brisotti on 12/05/23.
-////
+//
+//  File.swift
+//  help reader
+//
+//  Created by Jonatas Brisotti on 12/05/23.
+//
 //import Foundation
 //
 //let headers = [
