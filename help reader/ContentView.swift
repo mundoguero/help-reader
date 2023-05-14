@@ -8,12 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var textFieldText: String = ""
+    //@Binding var textFieldContent: String
+    
     var body: some View {
         VStack {
-            //TextField(/*@START_MENU_TOKEN@*/"Placeholder"/*@END_MENU_TOKEN@*/, text: /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Value@*/.constant("")/*@END_MENU_TOKEN@*/)
-            Button(/*@START_MENU_TOKEN@*/"Button"/*@END_MENU_TOKEN@*/) {
+            
+            TextField("Type something here", text: $textFieldText)
+                .padding()
+                .background(Color.gray.opacity(0.3).cornerRadius(12))
+                .font(.headline)
+            
+            Button(action: {
                 makePOSTRequest()
-            }
+            }, label: {
+                Text("Send")
+                    .padding()
+                    .background(Color.blue.cornerRadius(12))
+                    .foregroundColor(.white)
+                    .font(.headline)
+            })
 
         }
         .padding()
