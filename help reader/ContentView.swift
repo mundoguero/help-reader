@@ -21,17 +21,29 @@ struct ContentView: View {
                 .font(.headline)
             
             Button(action: {
-                makePOSTRequest()
+                if textValidation() {
+                    makePOSTRequest()
+                }
+                
+                textFieldText = ""
             }, label: {
                 Text("Send")
                     .padding()
-                    .background(Color.blue.cornerRadius(12))
+                    .background(textValidation() ? Color.blue : Color.gray)
+                    .cornerRadius(12)
                     .foregroundColor(.white)
                     .font(.headline)
             })
-
+            .disabled(!textValidation())
         }
         .padding()
+    }
+    
+    func textValidation() -> Bool {
+        if textFieldText.count >= 3 {
+            return true
+        }
+        return false
     }
 }
 
