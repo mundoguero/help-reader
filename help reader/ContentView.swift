@@ -9,13 +9,52 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var textFieldText: String = ""
-    //@Binding var textFieldContent: String
+    @State var textToConvert: String = "Place the txt here"
+    
+    func makePOSTRequest() {
+       
+       let headers = [
+           "content-type": "application/x-www-form-urlencoded",
+           "X-RapidAPI-Key": "***REMOVED***",
+           "X-RapidAPI-Host": "bionic-reading1.p.rapidapi.com"
+       ]
+       
+       //Keep the word content= in the beggining of the string
+       let postData = NSMutableData(data: "content=\(textToConvert)".data(using: String.Encoding.utf8)!)
+       postData.append("&response_type=html".data(using: String.Encoding.utf8)!)
+       postData.append("&request_type=html".data(using: String.Encoding.utf8)!)
+       postData.append("&fixation=1".data(using: String.Encoding.utf8)!)
+       postData.append("&saccade=10".data(using: String.Encoding.utf8)!)
+
+       let request = NSMutableURLRequest(
+           url: NSURL(
+           string: "https://bionic-reading1.p.rapidapi.com/convert"
+       )!
+           as URL, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0
+       )
+       request.httpMethod = "POST"
+       request.allHTTPHeaderFields = headers
+       request.httpBody = postData as Data
+
+       let session = URLSession.shared
+       let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+           if (error != nil) {
+               print(error as Any)
+           } else {
+               let httpResponse = response as? HTTPURLResponse
+               print(httpResponse! as Any)
+               print(postData)
+               print(headers)
+           }
+       })
+       dataTask.resume()
+    }
     
     var body: some View {
         VStack {
             
-            TextField("Type something here", text: $textFieldText)
+            TextEditor(text: $textToConvert)
+                .frame(width: 350, height: 200)
                 .padding()
                 .background(Color.gray.opacity(0.3).cornerRadius(12))
                 .font(.headline)
@@ -25,7 +64,7 @@ struct ContentView: View {
                     makePOSTRequest()
                 }
                 
-                textFieldText = ""
+                textToConvert = ""
             }, label: {
                 Text("Send")
                     .padding()
@@ -36,11 +75,13 @@ struct ContentView: View {
             })
             .disabled(!textValidation())
         }
+        Text("\(textToConvert)")
         .padding()
+        Spacer()
     }
     
     func textValidation() -> Bool {
-        if textFieldText.count >= 3 {
+        if textToConvert.count >= 3 {
             return true
         }
         return false
