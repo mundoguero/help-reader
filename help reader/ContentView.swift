@@ -10,6 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     @State var textToConvert: String = "Place the txt here"
+    //@State var httpResponse: String = ""
     
     func makePOSTRequest() {
        
@@ -19,7 +20,7 @@ struct ContentView: View {
            "X-RapidAPI-Host": "bionic-reading1.p.rapidapi.com"
        ]
        
-       //Keep the word content= in the beggining of the string
+       //Keep the word 'content=' in the beggining of the string
        let postData = NSMutableData(data: "content=\(textToConvert)".data(using: String.Encoding.utf8)!)
        postData.append("&response_type=html".data(using: String.Encoding.utf8)!)
        postData.append("&request_type=html".data(using: String.Encoding.utf8)!)
@@ -41,10 +42,14 @@ struct ContentView: View {
            if (error != nil) {
                print(error as Any)
            } else {
-               let httpResponse = response as? HTTPURLResponse
-               print(httpResponse! as Any)
+               let httpResponseHeader = response as? HTTPURLResponse
+               print(httpResponseHeader! as Any)
+               print("😜")
                print(postData)
                print(headers)
+               if let data = data, let httpResponseBody = String(data: data, encoding: .utf8) {
+                       print("Response data string:\n \(httpResponseBody)")
+                   }
            }
        })
        dataTask.resume()
