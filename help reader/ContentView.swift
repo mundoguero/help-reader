@@ -10,10 +10,11 @@ import SwiftUI
 struct ContentView: View {
     
     @State var textToConvert: String = "Place the txt here"
-    //let HTMLString = "<h1>HTML text here</h1>"
+    @State private var webContent: String = ""
+    @State private var isLoading: Bool = false
     
     
-    func makePOSTRequest() {
+     func makePOSTRequest() {
        
        let headers = [
            "content-type": "application/x-www-form-urlencoded",
@@ -50,10 +51,15 @@ struct ContentView: View {
                print(headers)
                if let data = data, let httpResponseBody = String(data: data, encoding: .utf8) {
                        print("Response data string:\n \(httpResponseBody)")
+                   DispatchQueue.main.async {
+                                           webContent = httpResponseBody
+                                           isLoading = false
+                                       }
                    }
            }
        })
        dataTask.resume()
+    
     }
     
     var body: some View {
@@ -83,7 +89,7 @@ struct ContentView: View {
         }
         Text("\(textToConvert)")
         .padding()
-        HTMLView(htmlString: "<h1>Place the txt here</h1>")
+        HTMLView(text: $webContent)
         Spacer()
     }
     

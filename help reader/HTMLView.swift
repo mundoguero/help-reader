@@ -11,7 +11,9 @@ import WebKit
 
 struct HTMLView: UIViewRepresentable {
     
-    let htmlString: String
+    @Binding var text: String
+    
+    //let htmlString: String
     
     func makeUIView(context: Context) -> WKWebView {
         //let webView =  WKWebView()
@@ -21,7 +23,19 @@ struct HTMLView: UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIViewType, context: Context) {
-        uiView.loadHTMLString(htmlString, baseURL: nil)
+        uiView.loadHTMLString(text, baseURL: nil)
     }
     
 }
+
+//struct HTMLView: UIViewRepresentable {
+//  @Binding var text: String
+//
+//  func makeUIView(context: Context) -> WKWebView {
+//    return WKWebView()
+//  }
+//
+//  func updateUIView(_ uiView: WKWebView, context: Context) {
+//    uiView.loadHTMLString(text, baseURL: nil)
+//  }
+//}
