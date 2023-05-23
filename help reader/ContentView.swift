@@ -10,7 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     @State var textToConvert: String = "Place the txt here"
-    //@State var httpResponse: String = ""
+    //let HTMLString = "<h1>HTML text here</h1>"
+    
     
     func makePOSTRequest() {
        
@@ -82,6 +83,7 @@ struct ContentView: View {
         }
         Text("\(textToConvert)")
         .padding()
+        HTMLView(htmlString: "<h1>Place the txt here</h1>")
         Spacer()
     }
     
