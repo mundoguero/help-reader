@@ -69,8 +69,6 @@ struct ContentView: View {
         
     }
     
-    //        .replacingOccurrences(of: titleRegex, with: "$0" + " style=\"color: blue; font-size: 40px", options: .regularExpression, range: nil)
-    
     var body: some View {
         VStack {
             
