@@ -39,6 +39,16 @@ class ContentViewModel: ObservableObject {
         request.allHTTPHeaderFields = headers
         request.httpBody = postData as Data
         
+        let cssToAdd =
+        """
+                                    <style>
+                                body {
+                                color: red;
+                                font-size: 78px;
+                                font-family: "AmericanTypewriter"
+                                    } </style>
+        """
+        
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
             if (error != nil) {
@@ -52,15 +62,6 @@ class ContentViewModel: ObservableObject {
                 if let data = data, let httpResponseBody = String(data: data, encoding: .utf8) {
                     print("Response data string:\n \(httpResponseBody)")
                     DispatchQueue.main.async {
-                        let cssToAdd =
-                        """
-                                                    <style>
-                                                body {
-                                                color: blue;
-                                                font-size: 78px;
-                                                font-family: "AmericanTypewriter"
-                                                    } </style>
-                        """
                         self.webContent = httpResponseBody + cssToAdd
                         self.isLoading = false
                     }

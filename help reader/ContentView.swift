@@ -25,7 +25,6 @@ struct ContentView: View {
                 if viewModel.textValidation() {
                     viewModel.makePOSTRequest()
                 }
-                
                 viewModel.textToConvert = ""
             }, label: {
                 Text("Send")
@@ -37,9 +36,11 @@ struct ContentView: View {
             })
             .disabled(!viewModel.textValidation())
         }
+        
         Text("\(viewModel.textToConvert)")
             .padding()
         HTMLView(text: $viewModel.webContent)
+        
         Spacer()
     }
 }
