@@ -11,20 +11,26 @@ struct CameraScanner: View {
     @Binding var startScanning: Bool
     @Binding var scanResult: String
     @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         NavigationView {
             CameraScannerViewController(startScanning: $startScanning, scanResult: $scanResult)
                 .toolbar {
-                    ToolbarItem(placement: .navigationBarLeading) {
+                    ToolbarItem(placement: .navigationBarTrailing) {
                         Button {
                             self.presentationMode.wrappedValue.dismiss()
                         } label: {
-                            Text("Cancel")
+                            Text("Done")
                         }
                     }
                 }
                 .interactiveDismissDisabled(true)
         }
+        .onChange(of: scanResult) { newValue in
+                    if !newValue.isEmpty {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                }
     }
 }
 

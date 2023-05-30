@@ -45,7 +45,7 @@ struct ContentView: View {
                     }
                     viewModel.textToConvert = ""
                 }, label: {
-                    Text("Send")
+                    Text("Convert")
                         .padding()
                         .background(viewModel.textValidation() ? Color.blue : Color.gray)
                         .cornerRadius(12)
