@@ -11,7 +11,7 @@ import SwiftUI
 struct help_readerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+           ContentView()
         }
     }
 }
