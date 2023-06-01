@@ -20,24 +20,64 @@ struct ContentView: View {
     var body: some View {
         VStack {
             
-            TextEditor(text: $viewModel.textToConvert)
-                .frame(width: 350, height: 200)
-                .padding()
-                .background(Color.gray.opacity(0.3).cornerRadius(12))
-                .font(.headline)
+            VStack {
+                        // Header
+                HStack {
+                    VStack(alignment: .leading) {
+                        
+                                Text("Hi Nicola!")
+                                    .font(.largeTitle)
+                                    .foregroundColor(.black)
+                                Text("This will be your home where you can read many books")
+                                    .font(.subheadline)
+                                    .foregroundColor(.gray)
+                            }
+                    .padding(.horizontal, 60.0)
+                    Spacer()
+                }
+                
+                        // Square with rounded corners
+                Button {
+                    if isDeviceCapacity {
+                        self.showCameraScannerView = true
+                    } else {
+                        self.showDeviceNotCapacityAlert = true
+                    }
+                } label: {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 17)
+                    .foregroundColor(Color("Yellow"))
+                .frame(width: 640, height: 370)
+                        Image("acquire")
+                            .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .clipShape(RoundedRectangle(cornerRadius: 17))
+                        
+                    }
+                }
+                
+                
+                        
+                        // Two smaller squares side by side
+                        HStack {
+                            RoundedRectangle(cornerRadius: 17)
+                                .foregroundColor(Color("Blue"))
+                                .frame(width: 300, height: 390)
+                                .padding()
+                            RoundedRectangle(cornerRadius: 17)
+                                .foregroundColor(Color("Green"))
+                                .frame(width: 300, height: 390)
+                        }
+                        .padding()
+                    }
+            
+//            TextEditor(text: $viewModel.textToConvert)
+//                .frame(width: 350, height: 200)
+//                .padding()
+//                .background(Color.gray.opacity(0.3).cornerRadius(12))
+//                .font(.headline)
             
             HStack {
-                
-//                Button(action: {
-//                    //
-//                }, label: {
-//                    Text("Scan")
-//                        .padding()
-//                        .background(Color.blue)
-//                        .cornerRadius(12)
-//                        .foregroundColor(.white)
-//                        .font(.headline)
-//                })
                 
                 Button(action: {
                     if viewModel.textValidation() {
@@ -58,22 +98,22 @@ struct ContentView: View {
             VStack {
                 Text(scanResults)
                     .padding()
-                
-                Button {
-                    if isDeviceCapacity {
-                        self.showCameraScannerView = true
-                    } else {
-                        self.showDeviceNotCapacityAlert = true
-                    }
-                } label: {
-                    Text("Tap to Scan Documents")
-                        .foregroundColor(.white)
-                        .frame(width: 300, height: 50)
-                        .background(Color.blue)
-                        .cornerRadius(10)
-                }
+
+//                Button {
+//                    if isDeviceCapacity {
+//                        self.showCameraScannerView = true
+//                    } else {
+//                        self.showDeviceNotCapacityAlert = true
+//                    }
+//                } label: {
+//                    Text("Tap to Scan Documents")
+//                        .foregroundColor(.white)
+//                        .frame(width: 300, height: 50)
+//                        .background(Color.blue)
+//                        .cornerRadius(10)
+//                }
             }
-            
+
             .sheet(isPresented: $showCameraScannerView) {
                 CameraScanner(startScanning: $showCameraScannerView, scanResult: $viewModel.textToConvert)
             }
@@ -89,7 +129,7 @@ struct ContentView: View {
             .padding()
         HTMLView(text: $viewModel.webContent)
         
-        Spacer()
+        //Spacer()
     }
 }
 
