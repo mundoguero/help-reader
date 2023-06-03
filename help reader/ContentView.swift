@@ -52,7 +52,8 @@ struct ContentView: View {
                             .foregroundColor(Color("Yellow"))
                         VStack {
                             Text("Acquire")
-                                .font(.system(size: 38, weight: .bold))
+                                .font(.custom("SF Pro Rounded", size: 39))
+                                .fontWeight(.bold)
                                 .foregroundColor(Color("FontColor"))
                             Image("lion-acquire")
                                 .resizable()
@@ -75,7 +76,8 @@ struct ContentView: View {
                                 
                                 VStack {
                                     Text("Photo \n Gallery")
-                                        .font(.system(size: 38, weight: .bold))
+                                        .font(.custom("SF Pro Rounded", size: 39))
+                                        .fontWeight(.bold)
                                         .foregroundColor(Color("FontColor"))
                                         .multilineTextAlignment(.center)
                                         .lineLimit(2)
@@ -94,10 +96,11 @@ struct ContentView: View {
                                 
                                 VStack {
                                     Text("School \n Material")
-                                        .font(.system(size: 38, weight: .bold))
-                                        .foregroundColor(Color("FontColor"))
-                                        .multilineTextAlignment(.center)
-                                        .lineLimit(2)
+                                            .font(.custom("SF Pro Rounded", size: 39))
+                                            .fontWeight(.bold)
+                                            .foregroundColor(Color("FontColor"))
+                                            .multilineTextAlignment(.center)
+                                            .lineLimit(2)
                                     Image("lion-school-material")
                                         .resizable()
                                         .padding(.bottom)
