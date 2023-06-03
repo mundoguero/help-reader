@@ -25,7 +25,6 @@ struct ContentView: View {
                         // Header
                 HStack {
                     VStack(alignment: .leading) {
-                        
                                 Text("Hi Nicola!")
                                     .font(.largeTitle)
                                     .foregroundColor(.black)
@@ -52,7 +51,8 @@ struct ContentView: View {
                             .foregroundColor(Color("Yellow"))
                         VStack {
                             Text("Acquire")
-                                .font(.custom("SF Pro Rounded", size: 39))
+                                .font(.custom("SF Pro Rounded", size: 50))
+                                .frame(width: 200, height: 30)
                                 .fontWeight(.bold)
                                 .foregroundColor(Color("FontColor"))
                             Image("lion-acquire")
@@ -75,12 +75,14 @@ struct ContentView: View {
                                 .padding()
                                 
                                 VStack {
-                                    Text("Photo \n Gallery")
+                                    Text("Photo Gallery")
                                         .font(.custom("SF Pro Rounded", size: 39))
                                         .fontWeight(.bold)
                                         .foregroundColor(Color("FontColor"))
+                                        .frame(width: 150, height: 120)
                                         .multilineTextAlignment(.center)
                                         .lineLimit(2)
+                                        .kerning(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
                                     Image("lion-photo-gallery")
                                         .resizable()
                                         .padding(.bottom)
@@ -95,10 +97,11 @@ struct ContentView: View {
                                     .frame(width: 300, height: 390)
                                 
                                 VStack {
-                                    Text("School \n Material")
+                                    Text("School Material")
                                             .font(.custom("SF Pro Rounded", size: 39))
-                                            .fontWeight(.bold)
+                                            .fontWeight(.heavy)
                                             .foregroundColor(Color("FontColor"))
+                                            .frame(width: 150, height: 120)
                                             .multilineTextAlignment(.center)
                                             .lineLimit(2)
                                     Image("lion-school-material")
