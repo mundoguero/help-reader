@@ -14,6 +14,7 @@
 		49A1723E2A0E3F97009D7838 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A1723D2A0E3F97009D7838 /* ContentView.swift */; };
 		49A172402A0E3F99009D7838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A1723F2A0E3F99009D7838 /* Assets.xcassets */; };
 		49A172432A0E3F99009D7838 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A172422A0E3F99009D7838 /* Preview Assets.xcassets */; };
+		49D0FE682A2B5FBF00B69F58 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 49D0FE672A2B5FBF00B69F58 /* SF-Pro-Rounded-Bold.otf */; };
 		49ED21542A24B85400CB7B04 /* CameraScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED21532A24B85400CB7B04 /* CameraScanner.swift */; };
 		49ED21562A24B8A500CB7B04 /* CameraScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED21552A24B8A500CB7B04 /* CameraScannerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -27,6 +28,8 @@
 		49A1723D2A0E3F97009D7838 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		49A1723F2A0E3F99009D7838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49A172422A0E3F99009D7838 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		49D0FE662A2B178600B69F58 /* help-reader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "help-reader-Info.plist"; sourceTree = SOURCE_ROOT; };
+		49D0FE672A2B5FBF00B69F58 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
 		49ED21532A24B85400CB7B04 /* CameraScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScanner.swift; sourceTree = "<group>"; };
 		49ED21552A24B8A500CB7B04 /* CameraScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScannerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -61,6 +64,7 @@
 		49A1723A2A0E3F97009D7838 /* help reader */ = {
 			isa = PBXGroup;
 			children = (
+				49D0FE662A2B178600B69F58 /* help-reader-Info.plist */,
 				49A1723B2A0E3F97009D7838 /* help_readerApp.swift */,
 				49A1723D2A0E3F97009D7838 /* ContentView.swift */,
 				49ED21532A24B85400CB7B04 /* CameraScanner.swift */,
@@ -70,6 +74,7 @@
 				49A1723F2A0E3F99009D7838 /* Assets.xcassets */,
 				49A172412A0E3F99009D7838 /* Preview Content */,
 				4988A1A52A0E7BF1000E049E /* OLD_APICall.swift */,
+				49D0FE672A2B5FBF00B69F58 /* SF-Pro-Rounded-Bold.otf */,
 			);
 			path = "help reader";
 			sourceTree = "<group>";
@@ -140,6 +145,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49D0FE682A2B5FBF00B69F58 /* SF-Pro-Rounded-Bold.otf in Resources */,
 				49A172432A0E3F99009D7838 /* Preview Assets.xcassets in Resources */,
 				49A172402A0E3F99009D7838 /* Assets.xcassets in Resources */,
 			);
@@ -287,9 +293,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"help reader/Preview Content\"";
-				DEVELOPMENT_TEAM = MN85UXWT72;
+				DEVELOPMENT_TEAM = 6TP858ZLR2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "help-reader-Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Your camera is used to scan text";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -301,7 +308,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.swp4.helpReader;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.swp4.help-reader";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -317,9 +324,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"help reader/Preview Content\"";
-				DEVELOPMENT_TEAM = MN85UXWT72;
+				DEVELOPMENT_TEAM = 6TP858ZLR2;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "help-reader-Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Your camera is used to scan text";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -331,7 +339,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = dev.swp4.helpReader;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.swp4.help-reader";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
