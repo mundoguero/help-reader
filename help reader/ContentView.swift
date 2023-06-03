@@ -18,6 +18,7 @@ struct ContentView: View {
     @State private var scanResults: String = ""
     
     var body: some View {
+        
         VStack {
             
             VStack {
@@ -37,6 +38,7 @@ struct ContentView: View {
                 }
                 
                         // Square with rounded corners
+                
                 Button {
                     if isDeviceCapacity {
                         self.showCameraScannerView = true
@@ -46,27 +48,64 @@ struct ContentView: View {
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 17)
-                    .foregroundColor(Color("Yellow"))
-                .frame(width: 640, height: 370)
-                        Image("acquire")
-                            .resizable()
+                            .frame(width: 640, height: 370)
+                            .foregroundColor(Color("Yellow"))
+                        VStack {
+                            Text("Acquire")
+                                .font(.system(size: 38, weight: .bold))
+                                .foregroundColor(Color("FontColor"))
+                            Image("lion-acquire")
+                                .resizable()
+                                .frame(width: 595, height: 294)
                                 .aspectRatio(contentMode: .fit)
-                                .clipShape(RoundedRectangle(cornerRadius: 17))
+                            .cornerRadius(17)
+                        }
+                                
                         
                     }
                 }
-                
-                
                         
                         // Two smaller squares side by side
                         HStack {
-                            RoundedRectangle(cornerRadius: 17)
-                                .foregroundColor(Color("Blue"))
-                                .frame(width: 300, height: 390)
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 17)
+                                    .foregroundColor(Color("Blue"))
+                                    .frame(width: 300, height: 390)
                                 .padding()
-                            RoundedRectangle(cornerRadius: 17)
-                                .foregroundColor(Color("Green"))
-                                .frame(width: 300, height: 390)
+                                
+                                VStack {
+                                    Text("Photo \n Gallery")
+                                        .font(.system(size: 38, weight: .bold))
+                                        .foregroundColor(Color("FontColor"))
+                                        .multilineTextAlignment(.center)
+                                        .lineLimit(2)
+                                    Image("lion-photo-gallery")
+                                        .resizable()
+                                        .padding(.bottom)
+                                        .frame(width: 260, height: 268, alignment: .bottom)
+                                        .aspectRatio(contentMode: .fit)
+                                    .cornerRadius(17)
+                                }
+                            }
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 17)
+                                    .foregroundColor(Color("Green"))
+                                    .frame(width: 300, height: 390)
+                                
+                                VStack {
+                                    Text("School \n Material")
+                                        .font(.system(size: 38, weight: .bold))
+                                        .foregroundColor(Color("FontColor"))
+                                        .multilineTextAlignment(.center)
+                                        .lineLimit(2)
+                                    Image("lion-school-material")
+                                        .resizable()
+                                        .padding(.bottom)
+                                        .frame(width: 260, height: 268, alignment: .bottom)
+                                        .aspectRatio(contentMode: .fit)
+                                    .cornerRadius(17)
+                                }
+                            }
                         }
                         .padding()
                     }
