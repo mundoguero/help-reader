@@ -13,12 +13,14 @@ struct LottieView: UIViewRepresentable {
     
     typealias UIViewType = UIView
     
+    let animationName: String
+    
     func makeUIView(context: UIViewRepresentableContext<LottieView>) -> UIView {
         let view = UIView(frame: .zero)
         
         let animationView = LottieAnimationView()
         
-        animationView.animation = LottieAnimation.named("applauso")
+        animationView.animation = LottieAnimation.named(animationName)
         animationView.contentMode = .scaleAspectFit
         animationView.loopMode = .loop
         animationView.play()

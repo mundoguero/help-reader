@@ -19,24 +19,29 @@ struct ContentView: View {
     
     var body: some View {
         
+        //De fora
         VStack {
             
-            VStack {
-                        // Header
-                HStack {
-                    VStack(alignment: .leading) {
-                                Text("Hi Nicola!")
-                                    .font(.largeTitle)
-                                    .foregroundColor(.black)
-                                Text("This will be your home where you can read many books")
-                                    .font(.subheadline)
-                                    .foregroundColor(.gray)
-                            }
-                    .padding(.horizontal, 60.0)
-                    Spacer()
-                }
+            VStack(alignment: .leading) {
                 
-                        // Square with rounded corners
+                
+                // Header
+                
+                VStack(alignment: .leading) {
+                    Text("Hi Nicola!")
+                        //.font(.largeTitle)
+                        .font(.custom("SF Pro Rounded", size: 36))
+                        .fontWeight(.bold)
+                        .foregroundColor(.black)
+                    Text("This will be your home where you\ncan read many books")
+                        .font(.custom("SF Pro Rounded", size: 20))
+                        .font(.title)
+                        .foregroundColor(.gray)
+                        .multilineTextAlignment(.leading)
+                        .lineLimit(2)
+                }.padding(0)
+                
+                Spacer(minLength: 50)
                 
                 Button {
                     if isDeviceCapacity {
@@ -47,123 +52,134 @@ struct ContentView: View {
                 } label: {
                     ZStack {
                         RoundedRectangle(cornerRadius: 17)
-                            .frame(width: 640, height: 370)
+                            .frame(height: 400)
                             .foregroundColor(Color("Yellow"))
+                            .shadow(radius: 2, y: 5)
+                            .padding(0)
                         VStack {
                             Text("Acquire")
-                                .font(.custom("SF Pro Rounded", size: 50))
+                                .font(.custom("SF Pro Rounded", size: 56))
                                 .frame(width: 200, height: 30)
                                 .fontWeight(.bold)
                                 .foregroundColor(Color("FontColor"))
-                            LottieView()
-                                .frame(width: 595, height: 294)
-                                //.background(Color.red)
+                                .padding(.top, -5.0)
+                            LottieView(animationName: "acquire")
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 630, height: 330)
+                                .clipped()
+                                .padding(-15)
+                                .cornerRadius(17)
+                        }
+                        
+                        
+                    }
+                }.padding(.horizontal, 0)
+                Spacer(minLength: 25)
+                
+                // Two smaller squares side by side
+                
+                HStack(spacing: 30) {
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 17)
+                            .foregroundColor(Color("Blue"))
+                            .shadow(radius: 2, y: 5)
+                        //.frame(width: 310, height: 390)
+                        //.padding(.leading, -20.0)
+                        
+                        VStack {
+                            Text("Photo Gallery")
+                                .font(.custom("SF Pro Rounded", size: 46))
+                                .fontWeight(.bold)
+                                .foregroundColor(Color("FontColor"))
+                                .frame(width: 150, height: 120)
+                                .multilineTextAlignment(.center)
+                                .lineLimit(2)
+                                .padding()
+                                //.layoutPriority(1)
+                            LottieView(animationName: "personal-books")
+                            //.resizable()
+                            //.padding(.bottom)
+                                .frame(width: 260, height: 268)
+                                .aspectRatio(contentMode: .fill)
+                                .background()
+                                .clipped()
+                                .cornerRadius(17)
+                        }
+                    }
+                    //.padding()
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 17)
+                            .foregroundColor(Color("Green"))
+                            .shadow(radius: 2, y: 5)
+                        //.frame(width: 310, height: 390)
+                        
+                        VStack {
+                            Text("School Material")
+                                .font(.custom("SF Pro Rounded", size: 40))
+                                .fontWeight(.heavy)
+                                .foregroundColor(Color("FontColor"))
+                                .frame(width: 150, height: 120)
+                                .multilineTextAlignment(.center)
+                                .lineLimit(2)
+                                .padding()
+                            LottieView(animationName: "school-material")
+                            //.resizable()
+                            //.padding(.bottom)
+                                .frame(width: 260, height: 268, alignment: .bottom)
+                                .background()
                                 .aspectRatio(contentMode: .fill)
                                 .cornerRadius(17)
-//                            Image("lion-acquire")
-//                                .resizable()
-//                                .frame(width: 595, height: 294)
-//                                .aspectRatio(contentMode: .fit)
-//                            .cornerRadius(17)
                         }
-                                
-                        
                     }
                 }
-                        
-                        // Two smaller squares side by side
-                        HStack {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 17)
-                                    .foregroundColor(Color("Blue"))
-                                    .frame(width: 300, height: 390)
-                                .padding()
-                                
-                                VStack {
-                                    Text("Photo Gallery")
-                                        .font(.custom("SF Pro Rounded", size: 39))
-                                        .fontWeight(.bold)
-                                        .foregroundColor(Color("FontColor"))
-                                        .frame(width: 150, height: 120)
-                                        .multilineTextAlignment(.center)
-                                        .lineLimit(2)
-                                        .kerning(/*@START_MENU_TOKEN@*/3.0/*@END_MENU_TOKEN@*/)
-                                    Image("lion-photo-gallery")
-                                        .resizable()
-                                        .padding(.bottom)
-                                        .frame(width: 260, height: 268, alignment: .bottom)
-                                        .aspectRatio(contentMode: .fit)
-                                    .cornerRadius(17)
-                                }
-                            }
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 17)
-                                    .foregroundColor(Color("Green"))
-                                    .frame(width: 300, height: 390)
-                                
-                                VStack {
-                                    Text("School Material")
-                                            .font(.custom("SF Pro Rounded", size: 39))
-                                            .fontWeight(.heavy)
-                                            .foregroundColor(Color("FontColor"))
-                                            .frame(width: 150, height: 120)
-                                            .multilineTextAlignment(.center)
-                                            .lineLimit(2)
-                                    Image("lion-school-material")
-                                        .resizable()
-                                        .padding(.bottom)
-                                        .frame(width: 260, height: 268, alignment: .bottom)
-                                        .aspectRatio(contentMode: .fit)
-                                    .cornerRadius(17)
-                                }
-                            }
-                        }
-                        .padding()
-                    }
-            
-//            TextEditor(text: $viewModel.textToConvert)
-//                .frame(width: 350, height: 200)
-//                .padding()
-//                .background(Color.gray.opacity(0.3).cornerRadius(12))
-//                .font(.headline)
-            
-            HStack {
-                
-                Button(action: {
-                    if viewModel.textValidation() {
-                        viewModel.makePOSTRequest()
-                    }
-                    viewModel.textToConvert = ""
-                }, label: {
-                    Text("Convert")
-                        .padding()
-                        .background(viewModel.textValidation() ? Color.blue : Color.gray)
-                        .cornerRadius(12)
-                        .foregroundColor(.white)
-                        .font(.headline)
-                })
-                .disabled(!viewModel.textValidation())
             }
+            .padding([.top, .leading, .trailing], 50.0)
+            .padding(.bottom, 70.0)
             
-            VStack {
-                Text(scanResults)
-                    .padding()
-
-//                Button {
-//                    if isDeviceCapacity {
-//                        self.showCameraScannerView = true
-//                    } else {
-//                        self.showDeviceNotCapacityAlert = true
+            
+            //            TextEditor(text: $viewModel.textToConvert)
+            //                .frame(width: 350, height: 200)
+            //                .padding()
+            //                .background(Color.gray.opacity(0.3).cornerRadius(12))
+            //                .font(.headline)
+            
+//            HStack {
+//
+//                Button(action: {
+//                    if viewModel.textValidation() {
+//                        viewModel.makePOSTRequest()
 //                    }
-//                } label: {
-//                    Text("Tap to Scan Documents")
+//                    viewModel.textToConvert = ""
+//                }, label: {
+//                    Text("Convert")
+//                        .padding()
+//                        .background(viewModel.textValidation() ? Color.blue : Color.gray)
+//                        .cornerRadius(12)
 //                        .foregroundColor(.white)
-//                        .frame(width: 300, height: 50)
-//                        .background(Color.blue)
-//                        .cornerRadius(10)
-//                }
-            }
-
+//                        .font(.headline)
+//                })
+//                .disabled(!viewModel.textValidation())
+//            }
+            
+//            VStack {
+//                Text(scanResults)
+//                    .padding()
+//
+//                                Button {
+//                                    if isDeviceCapacity {
+//                                        self.showCameraScannerView = true
+//                                    } else {
+//                                        self.showDeviceNotCapacityAlert = true
+//                                    }
+//                                } label: {
+//                                    Text("Tap to Scan Documents")
+//                                        .foregroundColor(.white)
+//                                        .frame(width: 300, height: 50)
+//                                        .background(Color.blue)
+//                                        .cornerRadius(10)
+//                                }
+//            }
+            
             .sheet(isPresented: $showCameraScannerView) {
                 CameraScanner(startScanning: $showCameraScannerView, scanResult: $viewModel.textToConvert)
             }
@@ -172,12 +188,17 @@ struct ContentView: View {
                 isDeviceCapacity = (DataScannerViewController.isSupported &&
                                     DataScannerViewController.isAvailable)
             }
-        }
+        }.background(Color("BackgroundColor")
+            .edgesIgnoringSafeArea(.all)
+        )
         
-        Text("\(viewModel.textToConvert)")
-        Text(scanResults)
-            .padding()
-        HTMLView(text: $viewModel.webContent)
+
+        
+        
+//        Text("\(viewModel.textToConvert)")
+//        Text(scanResults)
+//            .padding()
+//        HTMLView(text: $viewModel.webContent)
         
         //Spacer()
     }
