@@ -55,11 +55,16 @@ struct ContentView: View {
                                 .frame(width: 200, height: 30)
                                 .fontWeight(.bold)
                                 .foregroundColor(Color("FontColor"))
-                            Image("lion-acquire")
-                                .resizable()
+                            LottieView()
                                 .frame(width: 595, height: 294)
-                                .aspectRatio(contentMode: .fit)
-                            .cornerRadius(17)
+                                //.background(Color.red)
+                                .aspectRatio(contentMode: .fill)
+                                .cornerRadius(17)
+//                            Image("lion-acquire")
+//                                .resizable()
+//                                .frame(width: 595, height: 294)
+//                                .aspectRatio(contentMode: .fit)
+//                            .cornerRadius(17)
                         }
                                 
                         
