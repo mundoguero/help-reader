@@ -16,6 +16,7 @@ struct ContentView: View {
     @State private var isDeviceCapacity = false
     @State private var showDeviceNotCapacityAlert = false
     @State private var scanResults: String = ""
+    @State private var showModal = false
     
     var body: some View {
         
@@ -62,7 +63,7 @@ struct ContentView: View {
                                 .frame(width: 200, height: 30)
                                 .fontWeight(.bold)
                                 .foregroundColor(Color("FontColor"))
-                                .padding(.top, -5.0)
+                                .padding(.top, 5)
                             LottieView(animationName: "acquire")
                                 .aspectRatio(contentMode: .fill)
                                 .frame(width: 630, height: 330)
@@ -88,48 +89,58 @@ struct ContentView: View {
                         
                         VStack {
                             Text("Photo Gallery")
-                                .font(.custom("SF Pro Rounded", size: 46))
-                                .fontWeight(.bold)
+                                .font(.custom("SF Pro Rounded", size: 56))
+                                .fontWeight(.heavy)
                                 .foregroundColor(Color("FontColor"))
-                                .frame(width: 150, height: 120)
+                                .frame(width: 250, height: 140)
+                                //.background()
                                 .multilineTextAlignment(.center)
                                 .lineLimit(2)
-                                .padding()
-                                //.layoutPriority(1)
+                                .padding(.bottom, -5.0)
                             LottieView(animationName: "personal-books")
-                            //.resizable()
-                            //.padding(.bottom)
                                 .frame(width: 260, height: 268)
                                 .aspectRatio(contentMode: .fill)
-                                .background()
+                                //.background()
                                 .clipped()
                                 .cornerRadius(17)
                         }
                     }
-                    //.padding()
                     ZStack {
                         RoundedRectangle(cornerRadius: 17)
                             .foregroundColor(Color("Green"))
                             .shadow(radius: 2, y: 5)
-                        //.frame(width: 310, height: 390)
                         
-                        VStack {
-                            Text("School Material")
-                                .font(.custom("SF Pro Rounded", size: 40))
-                                .fontWeight(.heavy)
-                                .foregroundColor(Color("FontColor"))
-                                .frame(width: 150, height: 120)
-                                .multilineTextAlignment(.center)
-                                .lineLimit(2)
-                                .padding()
-                            LottieView(animationName: "school-material")
-                            //.resizable()
-                            //.padding(.bottom)
-                                .frame(width: 260, height: 268, alignment: .bottom)
-                                .background()
-                                .aspectRatio(contentMode: .fill)
-                                .cornerRadius(17)
-                        }
+                            
+                            Button {
+                                showModal = true
+                            } label: {
+                                VStack {
+                                Text("School Material")
+                                    .font(.custom("SF Pro Rounded", size: 56))
+                                    .fontWeight(.heavy)
+                                    .foregroundColor(Color("FontColor"))
+                                    .frame(width: 250, height: 140)
+                                    //.background()
+                                    .multilineTextAlignment(.center)
+                                    .lineLimit(2)
+                                    .padding(.bottom, -5.0)
+                                LottieView(animationName: "school-material-animabile")
+                                    .frame(width: 260, height: 268)
+                                    .aspectRatio(contentMode: .fill)
+                                    //.background()
+                                    .clipped()
+                                    .cornerRadius(17)
+                                
+                            }
+                            }.sheet(isPresented: $showModal) {
+                                ModalView()
+                            }
+                            
+                            
+                            
+                            
+                        
+                        //.padding(.top, -10.0)
                     }
                 }
             }
