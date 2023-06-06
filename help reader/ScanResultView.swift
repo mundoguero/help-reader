@@ -8,13 +8,35 @@
 import SwiftUI
 
 struct ScanResultView: View {
+    @Binding var scanResult: String
+    @StateObject private var viewModel = ContentViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+            Text(scanResult)
+                .font(.body)
+        }
+        
+        Button(action: {
+            viewModel.makePOSTRequest()
+                        }, label: {
+                            Text("Convert")
+                                .padding()
+                                .background(Color.blue)
+                                .cornerRadius(12)
+                                .foregroundColor(.white)
+                                .font(.headline)
+                        })
+        
+        
     }
 }
 
+
 struct ScanResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ScanResultView()
+        let scanResult = Binding<String>.constant("Example Scan Result")
+        
+        return ScanResultView(scanResult: scanResult)
     }
 }

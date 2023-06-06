@@ -7,30 +7,42 @@
 
 import SwiftUI
 
+import SwiftUI
+
 struct CameraScanner: View {
     @Binding var startScanning: Bool
     @Binding var scanResult: String
     @Environment(\.presentationMode) var presentationMode
+    @State private var navigateToScanResult = false
+    @StateObject private var viewModel = ContentViewModel()
     
     var body: some View {
         NavigationView {
-            CameraScannerViewController(startScanning: $startScanning, scanResult: $scanResult)
-                .toolbar {
-                    ToolbarItem(placement: .navigationBarTrailing) {
-                        Button {
-                            self.presentationMode.wrappedValue.dismiss()
-                        } label: {
-                            Text("Done")
-                        }
+            ZStack {
+                if navigateToScanResult {
+                    ScanResultView(scanResult: $scanResult)
+                } else {
+                    CameraScannerViewController(startScanning: $startScanning, scanResult: $scanResult)
+                }
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        self.presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Text("Done")
                     }
                 }
-                .interactiveDismissDisabled(true)
+            }
+            .interactiveDismissDisabled(true)
         }
         .onChange(of: scanResult) { newValue in
-                    if !newValue.isEmpty {
-                        self.presentationMode.wrappedValue.dismiss()
-                    }
-                }
+            if !newValue.isEmpty {
+                //viewModel.makePOSTRequest()
+                navigateToScanResult = true
+                //self.presentationMode.wrappedValue.dismiss()
+            }
+        }
     }
 }
 
