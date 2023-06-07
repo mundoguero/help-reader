@@ -43,9 +43,9 @@ class ContentViewModel: ObservableObject {
         """
                                     <style>
                                 body {
-                                color: blue;
-                                font-size: 78px;
-                                font-family: "AmericanTypewriter"
+                                color: black;
+                                font-size: 28px;
+                                font-family: "-apple-system"
                                     } </style>
         """
         

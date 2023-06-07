@@ -12,26 +12,25 @@ struct ScanResultView: View {
     @StateObject private var viewModel = ContentViewModel()
     
     var body: some View {
-        ScrollView {
+        VStack {
             Text(scanResult)
                 .font(.body)
+            Button(action: {
+                viewModel.textToConvert = scanResult
+                viewModel.makePOSTRequest()
+                //            viewModel.textToConvert = ""
+            }, label: {
+                Text("Convert")
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(12)
+                    .foregroundColor(.white)
+                    .font(.headline)
+            })
+                HTMLView(text: $viewModel.webContent)
         }
-        
-        Button(action: {
-            viewModel.makePOSTRequest()
-                        }, label: {
-                            Text("Convert")
-                                .padding()
-                                .background(Color.blue)
-                                .cornerRadius(12)
-                                .foregroundColor(.white)
-                                .font(.headline)
-                        })
-        
-        
     }
 }
-
 
 struct ScanResultView_Previews: PreviewProvider {
     static var previews: some View {
