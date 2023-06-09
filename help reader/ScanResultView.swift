@@ -15,18 +15,29 @@ struct ScanResultView: View {
         VStack {
             Text(scanResult)
                 .font(.body)
-            Button(action: {
-                viewModel.textToConvert = scanResult
-                viewModel.makePOSTRequest()
-                //            viewModel.textToConvert = ""
-            }, label: {
-                Text("Convert")
-                    .padding()
-                    .background(Color.blue)
-                    .cornerRadius(12)
-                    .foregroundColor(.white)
-                    .font(.headline)
+            HStack {
+                Button(action: {
+                    
+                }, label: {
+                    Text("Retake")
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(12)
+                        .foregroundColor(.white)
+                        .font(.headline)
+                })
+                Button(action: {
+                    viewModel.textToConvert = scanResult
+                    viewModel.makePOSTRequest()
+                }, label: {
+                    Text("Convert")
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(12)
+                        .foregroundColor(.white)
+                        .font(.headline)
             })
+            }
                 HTMLView(text: $viewModel.webContent)
         }
     }
