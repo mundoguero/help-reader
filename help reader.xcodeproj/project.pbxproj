@@ -28,7 +28,8 @@
 		49A172402A0E3F99009D7838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A1723F2A0E3F99009D7838 /* Assets.xcassets */; };
 		49A172432A0E3F99009D7838 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A172422A0E3F99009D7838 /* Preview Assets.xcassets */; };
 		49D0FE682A2B5FBF00B69F58 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 49D0FE672A2B5FBF00B69F58 /* SF-Pro-Rounded-Bold.otf */; };
-		49D0FE6C2A2B6A6600B69F58 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49D0FE6B2A2B6A6600B69F58 /* Localizable.strings */; };
+		49D7F18B2A3321850046617F /* CongratsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F18A2A3321850046617F /* CongratsView.swift */; };
+		49D7F18E2A33766C0046617F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 49D7F1902A33766D0046617F /* Localizable.strings */; };
 		49ED21542A24B85400CB7B04 /* CameraScanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED21532A24B85400CB7B04 /* CameraScanner.swift */; };
 		49ED21562A24B8A500CB7B04 /* CameraScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED21552A24B8A500CB7B04 /* CameraScannerViewController.swift */; };
 /* End PBXBuildFile section */
@@ -56,7 +57,10 @@
 		49A172422A0E3F99009D7838 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		49D0FE662A2B178600B69F58 /* help-reader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "help-reader-Info.plist"; sourceTree = SOURCE_ROOT; };
 		49D0FE672A2B5FBF00B69F58 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
-		49D0FE6B2A2B6A6600B69F58 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		49D7F18A2A3321850046617F /* CongratsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratsView.swift; sourceTree = "<group>"; };
+		49D7F18F2A33766D0046617F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		49D7F1912A3376840046617F /* it */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = it; path = it.lproj/Localizable.strings; sourceTree = "<group>"; };
+		49D7F1922A3376940046617F /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		49ED21532A24B85400CB7B04 /* CameraScanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScanner.swift; sourceTree = "<group>"; };
 		49ED21552A24B8A500CB7B04 /* CameraScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraScannerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -110,6 +114,7 @@
 				49A1723B2A0E3F97009D7838 /* help_readerApp.swift */,
 				49A1723D2A0E3F97009D7838 /* ContentView.swift */,
 				4988A1B12A249AA9000E049E /* ContentViewModel.swift */,
+				49D7F18A2A3321850046617F /* CongratsView.swift */,
 				495E58322A2F436200317548 /* ScanResultView.swift */,
 				495E58282A2F30E900317548 /* ModalView.swift */,
 				495E582A2A2F31D000317548 /* HistoryView.swift */,
@@ -139,7 +144,7 @@
 		49D0FE6A2A2B6A0200B69F58 /* Localization */ = {
 			isa = PBXGroup;
 			children = (
-				49D0FE6B2A2B6A6600B69F58 /* Localizable.strings */,
+				49D7F1902A33766D0046617F /* Localizable.strings */,
 			);
 			path = Localization;
 			sourceTree = "<group>";
@@ -189,6 +194,8 @@
 			knownRegions = (
 				en,
 				Base,
+				it,
+				"pt-BR",
 			);
 			mainGroup = 49A1722F2A0E3F97009D7838;
 			packageReferences = (
@@ -212,7 +219,7 @@
 				495E58252A2F20B700317548 /* school-material.json in Resources */,
 				49D0FE682A2B5FBF00B69F58 /* SF-Pro-Rounded-Bold.otf in Resources */,
 				495E581F2A2DD19000317548 /* applauso.json in Resources */,
-				49D0FE6C2A2B6A6600B69F58 /* Localizable.strings in Resources */,
+				49D7F18E2A33766C0046617F /* Localizable.strings in Resources */,
 				495E58192A2DCF4B00317548 /* acquire.json in Resources */,
 				49A172432A0E3F99009D7838 /* Preview Assets.xcassets in Resources */,
 				49A172402A0E3F99009D7838 /* Assets.xcassets in Resources */,
@@ -234,6 +241,7 @@
 				4988A1A62A0E7BF1000E049E /* OLD_APICall.swift in Sources */,
 				49A1723C2A0E3F97009D7838 /* help_readerApp.swift in Sources */,
 				49ED21562A24B8A500CB7B04 /* CameraScannerViewController.swift in Sources */,
+				49D7F18B2A3321850046617F /* CongratsView.swift in Sources */,
 				495E58102A2DC7CC00317548 /* LottieAnimations.swift in Sources */,
 				495E58332A2F436200317548 /* ScanResultView.swift in Sources */,
 				495E58292A2F30E900317548 /* ModalView.swift in Sources */,
@@ -246,11 +254,25 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		49D7F1902A33766D0046617F /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49D7F18F2A33766D0046617F /* en */,
+				49D7F1912A3376840046617F /* it */,
+				49D7F1922A3376940046617F /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		49A172442A0E3F99009D7838 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -311,6 +333,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

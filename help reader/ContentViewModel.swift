@@ -41,13 +41,13 @@ class ContentViewModel: ObservableObject {
         
         let cssToAdd =
         """
-                                    <style>
-                                body {
-                                color: black;
-                                font-size: 28px;
-                                font-family: "-apple-system"
-                                    } </style>
-        """
+                                            <style>
+                                        body {
+                                        color: black;
+                                        font-size: 28px;
+                                        font-family: "-apple-system";
+                                            } </style>
+                """
         
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in

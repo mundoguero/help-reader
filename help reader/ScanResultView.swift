@@ -10,14 +10,20 @@ import SwiftUI
 struct ScanResultView: View {
     @Binding var scanResult: String
     @StateObject private var viewModel = ContentViewModel()
+    @State private var showCameraScannerView = false
+    @Environment(\.presentationMode) var presentationMode // Add this line
+    
+    @State private var resultTextView = false // Add this line
+    
     
     var body: some View {
         VStack {
             Text(scanResult)
                 .font(.body)
+            
             HStack {
                 Button(action: {
-                    
+                    showCameraScannerView = true
                 }, label: {
                     Text("Retake")
                         .padding()
@@ -26,6 +32,13 @@ struct ScanResultView: View {
                         .foregroundColor(.white)
                         .font(.headline)
                 })
+                .sheet(isPresented: $showCameraScannerView) {
+                    CameraScanner(startScanning: $showCameraScannerView, scanResult: $viewModel.textToConvert)
+                        .onDisappear {
+                            presentationMode.wrappedValue.dismiss()
+                        }
+                }
+                
                 Button(action: {
                     viewModel.textToConvert = scanResult
                     viewModel.makePOSTRequest()
@@ -36,9 +49,22 @@ struct ScanResultView: View {
                         .cornerRadius(12)
                         .foregroundColor(.white)
                         .font(.headline)
-            })
+                })
             }
-                HTMLView(text: $viewModel.webContent)
+            HTMLView(text: $viewModel.webContent)
+        }
+    }
+}
+
+struct ConvertedResultView: View {
+    let content: String
+    
+    var body: some View {
+        VStack {
+            Text("Converted Result")
+                .font(.title)
+            
+            HTMLView(text: .constant(content))
         }
     }
 }

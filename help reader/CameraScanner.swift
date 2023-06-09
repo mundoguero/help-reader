@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 struct CameraScanner: View {
     @Binding var startScanning: Bool
     @Binding var scanResult: String
