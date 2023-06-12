@@ -18,6 +18,7 @@ struct ContentView: View {
     @State private var scanResults: String = ""
     @State private var showModal = false
     @State private var showCongratsView: Bool = false
+    @State private var isShowingScanResultView = false
     
     var body: some View {
         
@@ -116,6 +117,7 @@ struct ContentView: View {
                                 EmptyView()
                             }
                         )
+                        
                         .hidden()
                         
                         ZStack {

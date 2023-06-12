@@ -8,13 +8,14 @@
 import SwiftUI
 
 struct CongratsView: View {
+    @Environment(\.presentationMode) var presentationMode
+    
     var body: some View {
         
         VStack {
             Spacer(minLength: 50)
             
             Button {
-                
             } label: {
                 ZStack {
                     RoundedRectangle(cornerRadius: 17)
@@ -40,9 +41,8 @@ struct CongratsView: View {
                     
                 }
             }.padding(.horizontal, 0)
-            Spacer(minLength: 25)
             
-            // Two smaller squares side by side
+            Spacer(minLength: 25)
             
             HStack(spacing: 30) {
                 ZStack {
@@ -76,8 +76,9 @@ struct CongratsView: View {
                         .foregroundColor(Color(red: 153 / 255, green: 190 / 255, blue: 221 / 255))
                         .shadow(radius: 2, y: 5)
                         .padding()
+                    
                     Button {
-                        
+                        presentationMode.wrappedValue.dismiss()
                     } label: {
                         VStack {
                             Text("Home")

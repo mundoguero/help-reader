@@ -11,6 +11,8 @@ struct ScanResultView: View {
     @Binding var scanResult: String
     @StateObject private var viewModel = ContentViewModel()
     @State private var showCameraScannerView = false
+    @State private var isShowingConvertedText = false
+        @State private var convertedHTMLContent = ""
     @Environment(\.presentationMode) var presentationMode // Add this line
     
     @State private var resultTextView = false // Add this line
@@ -51,22 +53,18 @@ struct ScanResultView: View {
                         .font(.headline)
                 })
             }
-            HTMLView(text: $viewModel.webContent)
+            //HTMLView(text: $viewModel.webContent)
+            NavigationLink(destination: ConvertedTextView(htmlContent: convertedHTMLContent), isActive: $isShowingConvertedText) {
+                            EmptyView()
+                        }
+            .hidden()
+        }
+        .onChange(of: viewModel.webContent) { newValue in
+            convertedHTMLContent = newValue
+            isShowingConvertedText = !newValue.isEmpty
         }
     }
-}
-
-struct ConvertedResultView: View {
-    let content: String
     
-    var body: some View {
-        VStack {
-            Text("Converted Result")
-                .font(.title)
-            
-            HTMLView(text: .constant(content))
-        }
-    }
 }
 
 struct ScanResultView_Previews: PreviewProvider {
