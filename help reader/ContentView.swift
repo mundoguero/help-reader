@@ -69,10 +69,9 @@ struct ContentView: View {
                                     .padding(-15)
                                     .cornerRadius(17)
                             }
-                            
-                            
                         }
                     }.padding(.horizontal, 0)
+                    
                     Spacer(minLength: 25)
                     
                     // Two smaller squares side by side
@@ -112,7 +111,6 @@ struct ContentView: View {
                             RoundedRectangle(cornerRadius: 17)
                                 .foregroundColor(Color("Green"))
                                 .shadow(radius: 2, y: 5)
-                            
                             
                             Button {
                                 showModal = true
