@@ -23,7 +23,7 @@ struct ContentView: View {
     var body: some View {
         
         NavigationStack {
-            //De fora
+            //Empty VStack, just to prevent to open the camera inside the iPad split view
             VStack {
                 
                 VStack(alignment: .leading) {
