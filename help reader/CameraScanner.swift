@@ -32,7 +32,7 @@ struct CameraScanner: View {
                     }
                 }
             }
-            .interactiveDismissDisabled(true)
+            .interactiveDismissDisabled(false)
         }
         .onChange(of: scanResult) { newValue in
             if !newValue.isEmpty {

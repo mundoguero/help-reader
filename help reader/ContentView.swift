@@ -29,7 +29,6 @@ struct ContentView: View {
                 VStack(alignment: .leading) {
                     VStack(alignment: .leading) {
                         Text("Hi Nicola!")
-                        //.font(.largeTitle)
                             .font(.custom("SF Pro Rounded", size: 36))
                             .fontWeight(.bold)
                             .foregroundColor(.black)
@@ -87,8 +86,6 @@ struct ContentView: View {
                                 RoundedRectangle(cornerRadius: 17)
                                     .foregroundColor(Color("Blue"))
                                     .shadow(radius: 2, y: 5)
-                                //.frame(width: 310, height: 390)
-                                //.padding(.leading, -20.0)
                                 
                                 VStack {
                                     Text("Personal Books")
@@ -96,29 +93,20 @@ struct ContentView: View {
                                         .fontWeight(.heavy)
                                         .foregroundColor(Color("FontColor"))
                                         .frame(width: 250, height: 140)
-                                    //.background()
                                         .multilineTextAlignment(.center)
                                         .lineLimit(2)
                                         .padding(.bottom, -5.0)
                                     LottieView(animationName: "personal-books")
                                         .frame(width: 260, height: 268)
                                         .aspectRatio(contentMode: .fill)
-                                    //.background()
                                         .clipped()
                                         .cornerRadius(17)
                                 }
                             }
                         }
-                        
-                        NavigationLink(
-                            destination: CongratsView(),
-                            isActive: $showCongratsView,
-                            label: {
-                                EmptyView()
-                            }
-                        )
-                        
-                        .hidden()
+                        .navigationDestination(isPresented: $showCongratsView) {
+                            CongratsView()
+                        }
                         
                         ZStack {
                             RoundedRectangle(cornerRadius: 17)
@@ -135,14 +123,12 @@ struct ContentView: View {
                                         .fontWeight(.heavy)
                                         .foregroundColor(Color("FontColor"))
                                         .frame(width: 250, height: 140)
-                                    //.background()
                                         .multilineTextAlignment(.center)
                                         .lineLimit(2)
                                         .padding(.bottom, -5.0)
                                     LottieView(animationName: "school-material-animabile")
                                         .frame(width: 260, height: 268)
                                         .aspectRatio(contentMode: .fill)
-                                    //.background()
                                         .clipped()
                                         .cornerRadius(17)
                                     
@@ -150,56 +136,11 @@ struct ContentView: View {
                             }.sheet(isPresented: $showModal) {
                                 ModalView()
                             }
-                            //.padding(.top, -10.0)
                         }
                     }
                 }
                 .padding([.top, .leading, .trailing], 50.0)
                 .padding(.bottom, 70.0)
-                
-                
-                //            TextEditor(text: $viewModel.textToConvert)
-                //                .frame(width: 350, height: 200)
-                //                .padding()
-                //                .background(Color.gray.opacity(0.3).cornerRadius(12))
-                //                .font(.headline)
-                
-                //            HStack {
-                //
-                //                Button(action: {
-                //                    if viewModel.textValidation() {
-                //                        viewModel.makePOSTRequest()
-                //                    }
-                //                    viewModel.textToConvert = ""
-                //                }, label: {
-                //                    Text("Convert")
-                //                        .padding()
-                //                        .background(viewModel.textValidation() ? Color.blue : Color.gray)
-                //                        .cornerRadius(12)
-                //                        .foregroundColor(.white)
-                //                        .font(.headline)
-                //                })
-                //                .disabled(!viewModel.textValidation())
-                //            }
-                
-                //            VStack {
-                //                Text(scanResults)
-                //                    .padding()
-                //
-                //                                Button {
-                //                                    if isDeviceCapacity {
-                //                                        self.showCameraScannerView = true
-                //                                    } else {
-                //                                        self.showDeviceNotCapacityAlert = true
-                //                                    }
-                //                                } label: {
-                //                                    Text("Tap to Scan Documents")
-                //                                        .foregroundColor(.white)
-                //                                        .frame(width: 300, height: 50)
-                //                                        .background(Color.blue)
-                //                                        .cornerRadius(10)
-                //                                }
-                //            }
                 
                 .sheet(isPresented: $showCameraScannerView) {
                     CameraScanner(startScanning: $showCameraScannerView, scanResult: $viewModel.textToConvert)
@@ -213,15 +154,6 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(.all)
             )
             
-            
-            
-            
-            //        Text("\(viewModel.textToConvert)")
-            //        Text(scanResults)
-            //            .padding()
-            //        HTMLView(text: $viewModel.webContent)
-            
-            //Spacer()
         }
     }
 }

@@ -12,7 +12,7 @@ struct ScanResultView: View {
     @StateObject private var viewModel = ContentViewModel()
     @State private var showCameraScannerView = false
     @State private var isShowingConvertedText = false
-        @State private var convertedHTMLContent = ""
+    @State private var convertedHTMLContent = ""
     @Environment(\.presentationMode) var presentationMode // Add this line
     
     @State private var resultTextView = false // Add this line

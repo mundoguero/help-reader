@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ConvertedTextView: View {
-    @State private var isShowingCongrats = false
+    
     let htmlContent: String
+    @State private var isShowingCongratsView = false
     
     var body: some View {
         VStack {
@@ -17,7 +18,7 @@ struct ConvertedTextView: View {
                 .font(.title)
             
             Button(action: {
-                isShowingCongrats = true
+                isShowingCongratsView = true
             }) {
                 Text("Finish")
                     .padding()
@@ -26,9 +27,10 @@ struct ConvertedTextView: View {
                     .foregroundColor(.white)
                     .font(.headline)
             }
-            .sheet(isPresented: $isShowingCongrats) {
-                CongratsView()
-            }
+            NavigationLink(destination: CongratsView(), isActive: $isShowingCongratsView) {
+                            EmptyView()
+                        }
+            .hidden()
         }
     }
 }
