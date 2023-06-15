@@ -22,6 +22,9 @@ struct ScanResultView: View {
         VStack {
             Text(scanResult)
                 .font(.body)
+                .padding()
+            
+            Spacer()
             
             HStack {
                 Button(action: {
@@ -40,6 +43,7 @@ struct ScanResultView: View {
                             presentationMode.wrappedValue.dismiss()
                         }
                 }
+                .padding()
                 
                 Button(action: {
                     viewModel.textToConvert = scanResult
@@ -52,6 +56,7 @@ struct ScanResultView: View {
                         .foregroundColor(.white)
                         .font(.headline)
                 })
+                .padding()
             }
             //HTMLView(text: $viewModel.webContent)
             NavigationLink(destination: ConvertedTextView(htmlContent: convertedHTMLContent), isActive: $isShowingConvertedText) {
@@ -62,6 +67,8 @@ struct ScanResultView: View {
         .onChange(of: viewModel.webContent) { newValue in
             convertedHTMLContent = newValue
             isShowingConvertedText = !newValue.isEmpty
+            
+            
         }
     }
     

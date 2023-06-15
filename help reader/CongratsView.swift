@@ -102,6 +102,15 @@ struct CongratsView: View {
                 }
             }
         }
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    self.presentationMode.wrappedValue.dismiss()
+                } label: {
+                    Text("Done")
+                }
+            }
+        }
     }
 }
 
