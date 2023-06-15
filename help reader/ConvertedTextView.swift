@@ -8,6 +8,7 @@
 import SwiftUI
 import UIKit
 
+
 struct ConvertedTextView: View {
     
     @Environment(\.presentationMode) var presentationMode
@@ -15,7 +16,12 @@ struct ConvertedTextView: View {
     let htmlContent: String
     @State private var isShowingCongratsView = false
     @State private var isShowingPDFSavedAlert = false
-    @StateObject private var viewModel = ConvertedTextViewModel()
+    @StateObject private var viewModel = ConvertedTextViewModel(content: "")
+    
+    init(htmlContent: String) {
+            self.htmlContent = htmlContent
+            self._viewModel = StateObject(wrappedValue: ConvertedTextViewModel(content: htmlContent))
+        }
     
     var body: some View {
         
@@ -26,26 +32,24 @@ struct ConvertedTextView: View {
             
             HStack {
                 
-                Button(action: {
-                    viewModel.saveAsPDF(htmlContent: htmlContent) { success in
-                        isShowingPDFSavedAlert = success
-                    }
-                }) {
-                    Text("Save as PDF")
-                        .padding()
-                        .background(Color.blue)
-                        .cornerRadius(12)
-                        .foregroundColor(.white)
-                        .font(.headline)
-                }
-                .padding()
-                .alert(isPresented: $isShowingPDFSavedAlert) {
-                    Alert(
-                        title: Text("PDF Saved"),
-                        message: Text("The HTML content has been saved as a PDF file."),
-                        dismissButton: .default(Text("OK"))
-                    )
-                }
+                ShareLink("Export PDF", item: viewModel.render())
+                    .padding()
+                    .background(Color.blue)
+                    .cornerRadius(12)
+                    .foregroundColor(.white)
+                    .font(.headline)
+                
+//                Button(action: {
+//                                    let pdfURL = viewModel.render()
+//                                    sharePDF(pdfURL)
+//                                }) {
+//                                    Text("Save as PDF")
+//                                        .padding()
+//                                        .background(Color.blue)
+//                                        .cornerRadius(12)
+//                                        .foregroundColor(.white)
+//                                        .font(.headline)
+//                                }
                 
                 Button(action: {
                     isShowingCongratsView = true
@@ -74,6 +78,7 @@ struct ConvertedTextView: View {
         }
     }
 }
+
 
 struct Previews_ConvertedTextView_Previews: PreviewProvider {
     static var previews: some View {

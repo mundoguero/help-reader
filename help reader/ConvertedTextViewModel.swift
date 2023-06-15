@@ -5,31 +5,51 @@
 //  Created by Jonatas Brisotti on 14/06/23.
 //
 
-import Foundation
-import UIKit
+import SwiftUI
+import WebKit
 
+@MainActor
 class ConvertedTextViewModel: ObservableObject {
-    func saveAsPDF(htmlContent: String, completion: @escaping (Bool) -> Void) {
-        let formatter = UIMarkupTextPrintFormatter(markupText: htmlContent)
+    
+    var content: String // New property to hold the content
+    
+    init(content: String) {
+        self.content = content
+    }
+    
+    func render() -> URL {
+        // 1: Render Hello World with some modifiers  HTMLView(text: .constant(htmlContent))
+        let renderer = ImageRenderer(
+            content: Text(content)
+                .font(.largeTitle)
+                .padding()
+        )
         
-        let printPageRenderer = UIPrintPageRenderer()
-        printPageRenderer.addPrintFormatter(formatter, startingAtPageAt: 0)
+        // 2: Save it to our documents directory
+        let url = URL.documentsDirectory.appending(path: "output.pdf")
         
-        let pdfData = NSMutableData()
-        UIGraphicsBeginPDFContextToData(pdfData, .zero, nil)
-        
-        for pageIndex in 0..<printPageRenderer.numberOfPages {
-            UIGraphicsBeginPDFPage()
-            printPageRenderer.drawPage(at: pageIndex, in: UIGraphicsGetPDFContextBounds())
+        // 3: Start the rendering process
+        renderer.render { size, context in
+            // 4: Tell SwiftUI our PDF should be the same size as the views we're rendering
+            var box = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+            
+            // 5: Create the CGContext for our PDF pages
+            guard let pdf = CGContext(url as CFURL, mediaBox: &box, nil) else {
+                return
+            }
+            
+            // 6: Start a new PDF page
+            pdf.beginPDFPage(nil)
+            
+            // 7: Render the SwiftUI view data onto the page
+            context(pdf)
+            
+            // 8: End the page and close the file
+            pdf.endPDFPage()
+            pdf.closePDF()
         }
         
-        UIGraphicsEndPDFContext()
-        
-        let documentsPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0]
-        let pdfPath = "\(documentsPath)/convertedText.pdf"
-        let success = pdfData.write(toFile: pdfPath, atomically: true)
-        
-        completion(success)
+        return url
     }
 }
 
