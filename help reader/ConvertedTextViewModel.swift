@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import WebKit
 
 @MainActor
 class ConvertedTextViewModel: ObservableObject {
@@ -18,11 +17,13 @@ class ConvertedTextViewModel: ObservableObject {
     }
     
     func render() -> URL {
-        // 1: Render Hello World with some modifiers  HTMLView(text: .constant(htmlContent))
-        let renderer = ImageRenderer(
-            content: Text(content)
-                .font(.largeTitle)
-                .padding()
+        // 1: Render Hello World with some modifiers
+        let renderer = ImageRenderer(content:
+            //HTMLView(text: .constant("<h1>Test</h1>")) OBS: Render does not support webView
+            //HTMLView(text: .constant(htmlContent))
+            Text(content)
+            .font(.largeTitle)
+            .padding()
         )
         
         // 2: Save it to our documents directory
