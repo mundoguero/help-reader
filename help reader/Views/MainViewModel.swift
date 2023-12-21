@@ -9,7 +9,7 @@ import Foundation
 
 import SwiftUI
 
-class ContentViewModel: ObservableObject {
+class MainViewModel: ObservableObject {
     @Published var textToConvert: String = "Place the txt here"
     @Published internal var webContent: String = ""
     @Published private var isLoading: Bool = false

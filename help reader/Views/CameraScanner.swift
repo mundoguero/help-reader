@@ -12,7 +12,7 @@ struct CameraScanner: View {
     @Binding var scanResult: String
     @Environment(\.presentationMode) var presentationMode
     @State private var navigateToScanResult = false
-    @StateObject private var viewModel = ContentViewModel()
+    @StateObject private var viewModel = MainViewModel()
     
     var body: some View {
         NavigationView {

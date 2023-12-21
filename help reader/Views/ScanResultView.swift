@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ScanResultView: View {
     @Binding var scanResult: String
-    @StateObject private var viewModel = ContentViewModel()
+    @StateObject private var viewModel = MainViewModel()
     @State private var showCameraScannerView = false
     @State private var isShowingConvertedText = false
     @State private var convertedHTMLContent = ""
