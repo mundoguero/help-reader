@@ -23,122 +23,117 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             GeometryReader { geometry in
-                
                 VStack {
-                    Spacer(minLength: geometry.size.width * 0.08)
-                    HStack {
-                        Text("Hi Nicola!")
-                            .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.08))
-                            .fontWeight(.bold)
-                            .foregroundColor(.black)
-                            .multilineTextAlignment(.leading)
-                            .lineLimit(1)
-                        Spacer()
-                    }
+                    Spacer(minLength: geometry.size.width * 0.05)
                     
-                    HStack {
-                        Text("This will be your home where you can read many books")
-                            .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.045))
-                            .foregroundColor(.gray)
-                            .multilineTextAlignment(.leading)
-                            .lineLimit(2)
-                        Spacer()
-                    }
-                    
-                    HStack {
-                        Button {
-                            if isDeviceCapacity {
-                                self.showCameraScannerView = true
-                            } else {
-                                self.showDeviceNotCapacityAlert = true
-                            }
-                        } label: {
-                            ZStack(alignment: .top) {
-                                
-                                RoundedRectangle(cornerRadius: 17)
-                                    .frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.35)
-                                    .foregroundColor(Color("Yellow"))
-                                    .shadow(radius: 2, y: 5)
-                                
-                                VStack {
-                                    
-                                    Text("Acquire")
-                                        .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.06))
-                                        .fontWeight(.bold)
-                                        .foregroundColor(Color("FontColor"))
-                                    
-                                    Spacer()
-                                    LottieView(animationName: "acquire")
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: geometry.size.width * 0.90, height: geometry.size.height * 0.20)
-                                        .cornerRadius(17)
-                                        .padding(.top)
-                                    Spacer()
-                                }
-                            }
+                    //Hi Nicola
+                    VStack(spacing: 10) {
+                        HStack {
+                            Text("Hi Nicola!")
+                                .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.08))
+                                .fontWeight(.bold)
+                                .foregroundColor(.black)
+                                .multilineTextAlignment(.leading)
+                                .lineLimit(1)
+                                .padding(.leading)
+                            Spacer()
                         }
-                        Spacer()
-                    }
-                    
-                    HStack(spacing: geometry.size.width * 0.05) { // Relative spacing
-                        Button {
-                            showCongratsView.toggle()
-                        } label: {
-                            ZStack {
-                                RoundedRectangle(cornerRadius: 17)
-                                    .foregroundColor(Color("Blue"))
-                                    .shadow(radius: 2, y: 5)
-                                
-                                VStack {
-                                    Text("Personal \n Books")
-                                        .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.06)) // 10% of parent width
-                                        .fontWeight(.heavy)
-                                        .foregroundColor(Color("FontColor"))
-                                        .multilineTextAlignment(.center)
-                                        .lineLimit(2)
-                                        .padding(.bottom, -5.0)
-                                    LottieView(animationName: "personal-books")
-                                        .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.25) // 40% of parent width and 25% of parent height
-                                        .aspectRatio(contentMode: .fill)
-                                        .clipped()
-                                        .cornerRadius(17)
-                                }
-                            }
-                        }
-                        .navigationDestination(isPresented: $showCongratsView) {
-                            CongratsView()
+                        HStack {
+                            Text("This will be your home where you can read many books")
+                                .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.045))
+                                .foregroundColor(.gray)
+                                .multilineTextAlignment(.leading)
+                                .lineLimit(2)
+                                .padding(.leading)
+                            Spacer()
                         }
                         
+                    }
+                    
+                    //Acquire
+                    Button {
+                        if isDeviceCapacity {
+                            self.showCameraScannerView = true
+                        } else {
+                            self.showDeviceNotCapacityAlert = true
+                        }
+                    } label: {
                         ZStack {
                             RoundedRectangle(cornerRadius: 17)
-                                .foregroundColor(Color("Green"))
+                                .foregroundColor(Color("Yellow"))
                                 .shadow(radius: 2, y: 5)
-                            
-                            Button {
-                                showModal = true
-                            } label: {
-                                VStack {
-                                    Text("School Material")
-                                        .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.06)) // 10% of parent width
-                                        .fontWeight(.heavy)
-                                        .foregroundColor(Color("FontColor"))
-                                        .multilineTextAlignment(.center)
-                                        .lineLimit(2)
-                                        .padding(.bottom, -5.0)
-                                    LottieView(animationName: "school-material-animabile")
-                                        .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.25) // 40% of parent width and 25% of parent height
-                                        .aspectRatio(contentMode: .fill)
-                                        .clipped()
-                                        .cornerRadius(17)
-                                }
-                            }.sheet(isPresented: $showModal) {
-                                ModalView()
+                            VStack(spacing: 0) {
+                                Text("Acquire")
+                                    .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.06))
+                                    .fontWeight(.bold)
+                                    .foregroundColor(Color("FontColor"))
+                                    .padding(.top)
+                                Spacer()
+                                LottieView(animationName: "acquire")
+                                    .padding(-10)
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: geometry.size.width * 0.85, height: geometry.size.height * 0.25)
+                                    .border(Color.red, width: 5)
+                                    .clipShape(RoundedRectangle(cornerRadius: 17, style: .continuous))
+                                Spacer()
+                            }
+                        }.frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.38)
+                    }
+                    
+                    //Personal Books
+                    Button {
+                        showCongratsView.toggle()
+                    } label: {
+                        ZStack {
+                            RoundedRectangle(cornerRadius: 17)
+                                .foregroundColor(Color("Blue"))
+                                .shadow(radius: 2, y: 5)
+                            VStack {
+                                Text("Personal \n Books")
+                                    .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.06)) // 10% of parent width
+                                    .fontWeight(.heavy)
+                                    .foregroundColor(Color("FontColor"))
+                                    .multilineTextAlignment(.center)
+                                    .lineLimit(2)
+                                LottieView(animationName: "personal-books")
+                                    .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.25) // 40% of parent width and 25% of parent height
+                                    .aspectRatio(contentMode: .fill)
+                                    .clipped()
+                                    .cornerRadius(17)
                             }
                         }
                     }
+                    .navigationDestination(isPresented: $showCongratsView) {
+                        CongratsView()
+                    }
                     
-                    .padding([.top, .leading, .trailing], geometry.size.width * 0.1) // Relative padding
-                    .padding(.bottom, geometry.size.height * 0.1) // Relative padding
+                    //School Material
+                    ZStack {
+                        RoundedRectangle(cornerRadius: 17)
+                            .foregroundColor(Color("Green"))
+                            .shadow(radius: 2, y: 5)
+                        Button {
+                            showModal = true
+                        } label: {
+                            VStack {
+                                Text("School Material")
+                                    .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.06)) // 10% of parent width
+                                    .fontWeight(.heavy)
+                                    .foregroundColor(Color("FontColor"))
+                                    .multilineTextAlignment(.center)
+                                    .lineLimit(2)
+                                LottieView(animationName: "school-material-animabile")
+                                    .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.25) // 40% of parent width and 25% of parent height
+                                    .aspectRatio(contentMode: .fill)
+                                    .clipped()
+                                    .cornerRadius(17)
+                            }
+                        }.sheet(isPresented: $showModal) {
+                            ModalView()
+                        }
+                    }
+                    //.padding([.top, .leading, .trailing], geometry.size.width * 0.1) // Relative padding
+                    //.padding(.bottom, geometry.size.height * 0.1) // Relative padding
                 }
                 .sheet(isPresented: $showCameraScannerView) {
                     CameraScanner(startScanning: $showCameraScannerView, scanResult: $viewModel.textToConvert)
