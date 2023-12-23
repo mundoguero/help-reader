@@ -24,7 +24,7 @@ struct MainView: View {
         NavigationStack {
             GeometryReader { geometry in
                 VStack {
-                    Spacer(minLength: geometry.size.width * 0.05)
+                    Spacer(minLength: geometry.size.height * 0.05)
                     
                     //Hi Nicola
                     VStack(spacing: 10) {
@@ -40,10 +40,10 @@ struct MainView: View {
                         }
                         HStack {
                             Text("This will be your home where you can read many books")
-                                .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.045))
+                                .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.04))
                                 .foregroundColor(.gray)
                                 .multilineTextAlignment(.leading)
-                                .lineLimit(2)
+                                //.lineLimit(2)
                                 .padding(.leading)
                             Spacer()
                         }
@@ -64,7 +64,7 @@ struct MainView: View {
                                 .shadow(radius: 2, y: 5)
                             VStack(spacing: 0) {
                                 Text("Acquire")
-                                    .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.06))
+                                    .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.08))
                                     .fontWeight(.bold)
                                     .foregroundColor(Color("FontColor"))
                                     .padding(.top)
@@ -73,65 +73,86 @@ struct MainView: View {
                                     .padding(-10)
                                     .aspectRatio(contentMode: .fill)
                                     .frame(width: geometry.size.width * 0.85, height: geometry.size.height * 0.25)
-                                    .border(Color.red, width: 5)
+                                    //.border(Color.red, width: 5)
                                     .clipShape(RoundedRectangle(cornerRadius: 17, style: .continuous))
                                 Spacer()
                             }
                         }.frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.38)
                     }
+                    .padding(.bottom)
                     
-                    //Personal Books
-                    Button {
-                        showCongratsView.toggle()
-                    } label: {
-                        ZStack {
-                            RoundedRectangle(cornerRadius: 17)
-                                .foregroundColor(Color("Blue"))
-                                .shadow(radius: 2, y: 5)
-                            VStack {
-                                Text("Personal \n Books")
-                                    .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.06)) // 10% of parent width
-                                    .fontWeight(.heavy)
-                                    .foregroundColor(Color("FontColor"))
-                                    .multilineTextAlignment(.center)
-                                    .lineLimit(2)
-                                LottieView(animationName: "personal-books")
-                                    .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.25) // 40% of parent width and 25% of parent height
-                                    .aspectRatio(contentMode: .fill)
-                                    .clipped()
-                                    .cornerRadius(17)
-                            }
+                    
+                    HStack {
+                        Spacer()
+                        //Personal Books
+                        Button {
+                            showCongratsView.toggle()
+                        } label: {
+                            
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 17)
+                                    .foregroundColor(Color("Blue"))
+                                    .shadow(radius: 2, y: 5)
+                                VStack(spacing: 0) {
+                                    Text("Personal \n Books")
+                                        .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.06))
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color("FontColor"))
+                                        .multilineTextAlignment(.center)
+                                        .lineLimit(2)
+                                        .padding(.top)
+                                    Spacer()
+                                    LottieView(animationName: "personal-books")
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: geometry.size.width * 0.35, height: geometry.size.height * 0.27)
+                                        //.border(Color.red, width: 5)
+                                        .clipShape(RoundedRectangle(cornerRadius: 17, style: .continuous))
+                                        .padding(.bottom)
+                                }
+                            }.frame(width: geometry.size.width * 0.46, height: geometry.size.height * 0.42)
                         }
-                    }
-                    .navigationDestination(isPresented: $showCongratsView) {
-                        CongratsView()
-                    }
-                    
-                    //School Material
-                    ZStack {
-                        RoundedRectangle(cornerRadius: 17)
-                            .foregroundColor(Color("Green"))
-                            .shadow(radius: 2, y: 5)
+                        .navigationDestination(isPresented: $showCongratsView) {
+                            CongratsView()
+                        }
+                        
+                        Spacer()
+                        
+                        //School Material
                         Button {
                             showModal = true
                         } label: {
-                            VStack {
-                                Text("School Material")
-                                    .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.06)) // 10% of parent width
-                                    .fontWeight(.heavy)
-                                    .foregroundColor(Color("FontColor"))
-                                    .multilineTextAlignment(.center)
-                                    .lineLimit(2)
-                                LottieView(animationName: "school-material-animabile")
-                                    .frame(width: geometry.size.width * 0.4, height: geometry.size.height * 0.25) // 40% of parent width and 25% of parent height
-                                    .aspectRatio(contentMode: .fill)
-                                    .clipped()
-                                    .cornerRadius(17)
+                            
+                            ZStack {
+                                RoundedRectangle(cornerRadius: 17)
+                                    .foregroundColor(Color("Green"))
+                                    .shadow(radius: 2, y: 5)
+                                VStack(spacing: 0) {
+                                    Text("School \n Material")
+                                        .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.06))
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color("FontColor"))
+                                        .multilineTextAlignment(.center)
+                                        .lineLimit(2)
+                                        .padding(.top)
+                                    Spacer()
+                                    LottieView(animationName: "school-material-animabile")
+                                        .aspectRatio(contentMode: .fill)
+                                        .frame(width: geometry.size.width * 0.35, height: geometry.size.height * 0.27) // 40% of parent width and 25% of parent height
+                                        //.border(Color.red, width: 5)
+                                        .clipShape(RoundedRectangle(cornerRadius: 17, style: .continuous))
+                                        .padding(.bottom)
+                                }
+                            }.frame(width: geometry.size.width * 0.46, height: geometry.size.height * 0.42)
+                                //.padding()
+                            .sheet(isPresented: $showModal) {
+                                ModalView()
+                                
                             }
-                        }.sheet(isPresented: $showModal) {
-                            ModalView()
                         }
+                        Spacer()
                     }
+                    
+                   
                     //.padding([.top, .leading, .trailing], geometry.size.width * 0.1) // Relative padding
                     //.padding(.bottom, geometry.size.height * 0.1) // Relative padding
                 }
