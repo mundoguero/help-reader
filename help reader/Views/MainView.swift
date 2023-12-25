@@ -32,7 +32,7 @@ struct MainView: View {
                             Text("Hi Nicola!")
                                 .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.08))
                                 .fontWeight(.bold)
-                                .foregroundColor(.black)
+                                .foregroundColor(Color("FontBlackWhite"))
                                 .multilineTextAlignment(.leading)
                                 .lineLimit(1)
                                 .padding(.leading)
@@ -41,9 +41,9 @@ struct MainView: View {
                         HStack {
                             Text("This will be your home where you can read many books")
                                 .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.04))
-                                .foregroundColor(.gray)
-                                .multilineTextAlignment(.leading)
-                                //.lineLimit(2)
+                                .foregroundColor(Color("FontBlackWhite"))
+                                //.multilineTextAlignment(.leading)
+                                //.lineLimit(3)
                                 .padding(.leading)
                             Spacer()
                         }
@@ -77,13 +77,13 @@ struct MainView: View {
                                     .clipShape(RoundedRectangle(cornerRadius: 17, style: .continuous))
                                 Spacer()
                             }
-                        }.frame(width: geometry.size.width * 0.95, height: geometry.size.height * 0.38)
+                        }.frame(width: geometry.size.width * 0.96, height: geometry.size.height * 0.38)
                     }
                     .padding(.bottom)
                     
                     
                     HStack {
-                        Spacer()
+                        //Spacer()
                         //Personal Books
                         Button {
                             showCongratsView.toggle()
@@ -109,7 +109,7 @@ struct MainView: View {
                                         .clipShape(RoundedRectangle(cornerRadius: 17, style: .continuous))
                                         .padding(.bottom)
                                 }
-                            }.frame(width: geometry.size.width * 0.46, height: geometry.size.height * 0.42)
+                            }.padding(.leading).frame(width: geometry.size.width * 0.44, height: geometry.size.height * 0.42)
                         }
                         .navigationDestination(isPresented: $showCongratsView) {
                             CongratsView()
@@ -142,14 +142,13 @@ struct MainView: View {
                                         .clipShape(RoundedRectangle(cornerRadius: 17, style: .continuous))
                                         .padding(.bottom)
                                 }
-                            }.frame(width: geometry.size.width * 0.46, height: geometry.size.height * 0.42)
-                                //.padding()
+                            }.frame(width: geometry.size.width * 0.44, height: geometry.size.height * 0.42)
+                                .padding(.trailing)
                             .sheet(isPresented: $showModal) {
                                 ModalView()
                                 
                             }
                         }
-                        Spacer()
                     }
                     
                    
