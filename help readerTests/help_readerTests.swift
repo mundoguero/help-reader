@@ -31,14 +31,15 @@ final class help_readerTests: XCTestCase {
     }
     
     func testPostDataBeginsWithContent() throws {
-        // Set textToConvert to a test value
+        // Given: Setting up the scenario
         viewModel.textToConvert = "test"
-        
-        // Generate postData
+        let expectedPrefix = "content="
+
+        // When: Executing the action to be tested
         let postData = viewModel.generatePostData()
-        
-        // Test that postData begins with "content=", it's an API requirement
-        XCTAssertTrue(postData.hasPrefix("content="), "postData should start with 'content='")
+
+        // Then: Checking the expected result
+        XCTAssertTrue(postData.hasPrefix(expectedPrefix), "postData should begin with '\(expectedPrefix)' due to an API requirement")
     }
     
     func testPerformanceExample() throws {
