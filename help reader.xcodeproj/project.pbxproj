@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4931783D2B44591800975409 /* help_readerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4931783C2B44591800975409 /* help_readerTests.swift */; };
 		495E580E2A2DC6F200317548 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 495E580D2A2DC6F200317548 /* Lottie */; };
 		495E58102A2DC7CC00317548 /* LottieAnimations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495E580F2A2DC7CC00317548 /* LottieAnimations.swift */; };
 		495E58192A2DCF4B00317548 /* acquire.json in Resources */ = {isa = PBXBuildFile; fileRef = 495E58182A2DCF4B00317548 /* acquire.json */; };
@@ -35,7 +36,19 @@
 		49ED21562A24B8A500CB7B04 /* CameraScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49ED21552A24B8A500CB7B04 /* CameraScannerViewController.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4931783E2B44591800975409 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49A172302A0E3F97009D7838 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 49A172372A0E3F97009D7838;
+			remoteInfo = "help reader";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		4931783A2B44591800975409 /* help readerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "help readerTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4931783C2B44591800975409 /* help_readerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = help_readerTests.swift; sourceTree = "<group>"; };
 		495E580F2A2DC7CC00317548 /* LottieAnimations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieAnimations.swift; sourceTree = "<group>"; };
 		495E58182A2DCF4B00317548 /* acquire.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = acquire.json; sourceTree = "<group>"; };
 		495E581E2A2DD19000317548 /* applauso.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = applauso.json; sourceTree = "<group>"; };
@@ -68,6 +81,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		493178372B44591800975409 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49A172352A0E3F97009D7838 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -115,6 +135,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		4931783B2B44591800975409 /* help readerTests */ = {
+			isa = PBXGroup;
+			children = (
+				4931783C2B44591800975409 /* help_readerTests.swift */,
+			);
+			path = "help readerTests";
+			sourceTree = "<group>";
+		};
 		495E58112A2DCBD200317548 /* Animations */ = {
 			isa = PBXGroup;
 			children = (
@@ -131,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				49A1723A2A0E3F97009D7838 /* help reader */,
+				4931783B2B44591800975409 /* help readerTests */,
 				49A172392A0E3F97009D7838 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -139,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				49A172382A0E3F97009D7838 /* help reader.app */,
+				4931783A2B44591800975409 /* help readerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -179,6 +209,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		493178392B44591800975409 /* help readerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 493178422B44591800975409 /* Build configuration list for PBXNativeTarget "help readerTests" */;
+			buildPhases = (
+				493178362B44591800975409 /* Sources */,
+				493178372B44591800975409 /* Frameworks */,
+				493178382B44591800975409 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4931783F2B44591800975409 /* PBXTargetDependency */,
+			);
+			name = "help readerTests";
+			productName = "help readerTests";
+			productReference = 4931783A2B44591800975409 /* help readerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		49A172372A0E3F97009D7838 /* help reader */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49A172462A0E3F99009D7838 /* Build configuration list for PBXNativeTarget "help reader" */;
@@ -206,9 +254,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1420;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					493178392B44591800975409 = {
+						CreatedOnToolsVersion = 15.0.1;
+						TestTargetID = 49A172372A0E3F97009D7838;
+					};
 					49A172372A0E3F97009D7838 = {
 						CreatedOnToolsVersion = 14.2;
 					};
@@ -233,11 +285,19 @@
 			projectRoot = "";
 			targets = (
 				49A172372A0E3F97009D7838 /* help reader */,
+				493178392B44591800975409 /* help readerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		493178382B44591800975409 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49A172362A0E3F97009D7838 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -257,6 +317,14 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		493178362B44591800975409 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4931783D2B44591800975409 /* help_readerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49A172342A0E3F97009D7838 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -282,6 +350,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4931783F2B44591800975409 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 49A172372A0E3F97009D7838 /* help reader */;
+			targetProxy = 4931783E2B44591800975409 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		49D7F1902A33766D0046617F /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
@@ -296,6 +372,51 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		493178402B44591800975409 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M68NK62DE3;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.jonatas.help-reader.help-readerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/help reader.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/help reader";
+			};
+			name = Debug;
+		};
+		493178412B44591800975409 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = M68NK62DE3;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "co.jonatas.help-reader.help-readerTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/help reader.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/help reader";
+			};
+			name = Release;
+		};
 		49A172442A0E3F99009D7838 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -493,6 +614,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		493178422B44591800975409 /* Build configuration list for PBXNativeTarget "help readerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				493178402B44591800975409 /* Debug */,
+				493178412B44591800975409 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		49A172332A0E3F97009D7838 /* Build configuration list for PBXProject "help reader" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
