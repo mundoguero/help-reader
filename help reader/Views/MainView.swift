@@ -63,7 +63,7 @@ struct MainView: View {
                                 .foregroundColor(Color("Yellow"))
                                 .shadow(radius: 2, y: 5)
                             VStack(spacing: 0) {
-                                Text("Acquire")
+                                Text(LocalizedStringKey("Acquire"))
                                     .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.08))
                                     .fontWeight(.bold)
                                     .foregroundColor(Color("FontColor"))
@@ -94,7 +94,7 @@ struct MainView: View {
                                     .foregroundColor(Color("Blue"))
                                     .shadow(radius: 2, y: 5)
                                 VStack(spacing: 0) {
-                                    Text("Personal \n Books")
+                                    Text(LocalizedStringKey("Personal Books"))
                                         .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.06))
                                         .fontWeight(.bold)
                                         .foregroundColor(Color("FontColor"))
@@ -127,7 +127,7 @@ struct MainView: View {
                                     .foregroundColor(Color("Green"))
                                     .shadow(radius: 2, y: 5)
                                 VStack(spacing: 0) {
-                                    Text("School \n Material")
+                                    Text(LocalizedStringKey("School Material"))
                                         .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.06))
                                         .fontWeight(.bold)
                                         .foregroundColor(Color("FontColor"))

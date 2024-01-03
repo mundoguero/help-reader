@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  help reader
+
+  Created by Jonatas Brisotti on 03/06/23.
+  
+*/
+
+//Main
+"Acquire" = "Acquire";
+"Personal Books" = "Personal \n Books";
+"School Material" = "School \n Material";
