@@ -19,7 +19,7 @@ struct CongratsView: View {
                             .foregroundColor(Color(red: 116 / 255, green: 224 / 255, blue: 255 / 255))
                             .shadow(radius: 2, y: 5)
                         VStack {
-                            Text("GREAT!")
+                            Text(LocalizedStringKey("Great"))
                                 .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.10))
                                 .fontWeight(.bold)
                                 .foregroundColor(.white)
@@ -42,7 +42,7 @@ struct CongratsView: View {
                                 .foregroundColor(Color(red: 153 / 255, green: 190 / 255, blue: 221 / 255))
                                 .shadow(radius: 2, y: 5)
                             VStack(spacing: 0) {
-                                Text("Repeat")
+                                Text(LocalizedStringKey("Repeat"))
                                     .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.08))
                                     .fontWeight(.bold)
                                     .foregroundColor(Color("FontColor"))
@@ -70,7 +70,7 @@ struct CongratsView: View {
                                     .foregroundColor(Color(red: 153 / 255, green: 190 / 255, blue: 221 / 255))
                                     .shadow(radius: 2, y: 5)
                                 VStack(spacing: 0) {
-                                    Text("Home")
+                                    Text(LocalizedStringKey("Home"))
                                         .font(.custom("SF Pro Rounded", size: geometry.size.width * 0.08))
                                         .fontWeight(.bold)
                                         .foregroundColor(Color("FontColor"))
@@ -104,7 +104,7 @@ struct CongratsView: View {
                     Button {
                         self.presentationMode.wrappedValue.dismiss()
                     } label: {
-                        Text("Done")
+                        Text(LocalizedStringKey("Done"))
                     }
                 }
             }
