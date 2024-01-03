@@ -1,4 +1,4 @@
-/* 
+/*
   Localizable.strings
   help reader
 
@@ -6,15 +6,23 @@
   
 */
 
+//Common
+"Finish" = "Finalizar";
+
 //Main
-"Acquire" = "Adquirir";
+"Acquire" = "Escanear";
 "Personal Books" = "Livros \n Pessoais";
 "School Material" = "Material \n Escolar";
+"Place the text here" = "Digite o testo aqui";
 
 //Congrats
 "Great" = "BOA!";
 "Repeat" = "Repetir";
 "Home" = "Home";
 "Done" = "Feito";
+
+//ScanResultView
+"Retake" = "Refazer";
+"Convert" = "Converter";
 
 

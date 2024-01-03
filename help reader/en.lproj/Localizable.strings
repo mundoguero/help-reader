@@ -6,13 +6,21 @@
   
 */
 
+//Common
+"Finish" = "Finish";
+
 //Main
 "Acquire" = "Acquire";
 "Personal Books" = "Personal \n Books";
 "School Material" = "School \n Material";
+"Place the text here" = "Place the text here";
 
 //Congrats
 "Great" = "GREAT!";
 "Repeat" = "Repeat";
 "Home" = "Home";
 "Done" = "Done";
+
+//ScanResultView
+"Retake" = "Retake";
+"Convert" = "Convert";

@@ -28,7 +28,7 @@ struct CameraScanner: View {
                     Button {
                         self.presentationMode.wrappedValue.dismiss()
                     } label: {
-                        Text("Done")
+                        Text(LocalizedStringKey("Done"))
                     }
                 }
             }

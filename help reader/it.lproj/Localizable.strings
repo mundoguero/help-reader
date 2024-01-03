@@ -6,14 +6,22 @@
   
 */
 
+//Common
+"Finish" = "Fine";
+
 //Main
 "Acquire" = "Acquistare";
 "Personal Books" = "Libri \n Personali";
 "School Material" = "Materiale \n Escolastico";
+"Place the text here" = "Inserisci il testo qui";
 
 //Congrats
 "Great" = "BRAVO!";
 "Repeat" = "Ripetere";
 "Home" = "Home";
 "Done" = "Fatto";
+
+//ScanResultView
+"Retake" = "Riprendere";
+"Convert" = "Convertire";
 

@@ -1,5 +1,5 @@
 //
-//  ContentViewModel.swift
+//  MainViewModel.swift
 //  help reader
 //
 //  Created by Jonatas Brisotti on 29/05/23.
@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class MainViewModel: ObservableObject {
-    @Published var textToConvert: String = "Place the txt here"
+    @Published var textToConvert: String = "Place the text here"
     @Published var webContent: String = ""
     @Published private var isLoading: Bool = false
     
@@ -25,7 +25,7 @@ class MainViewModel: ObservableObject {
     func makePOSTRequest() {
         let headers = [
             "content-type": "application/x-www-form-urlencoded",
-            "X-RapidAPI-Key": "your-api-key",
+            "X-RapidAPI-Key": "***REMOVED***",
             "X-RapidAPI-Host": "bionic-reading1.p.rapidapi.com"
         ]
         

@@ -54,7 +54,7 @@ struct ConvertedTextView: View {
                 Button(action: {
                     isShowingCongratsView = true
                 }) {
-                    Text("Finish")
+                    Text(LocalizedStringKey("Finish"))
                         .padding()
                         .background(Color.blue)
                         .cornerRadius(12)
@@ -72,7 +72,7 @@ struct ConvertedTextView: View {
                 Button {
                     self.presentationMode.wrappedValue.dismiss()
                 } label: {
-                    Text("Done")
+                    Text(LocalizedStringKey("Done"))
                 }
             }
         }

@@ -30,7 +30,7 @@ struct ScanResultView: View {
                 Button(action: {
                     showCameraScannerView = true
                 }, label: {
-                    Text("Retake")
+                    Text(LocalizedStringKey("Retake"))
                         .padding()
                         .background(Color.blue)
                         .cornerRadius(12)
@@ -49,7 +49,7 @@ struct ScanResultView: View {
                     viewModel.textToConvert = scanResult
                     viewModel.makePOSTRequest()
                 }, label: {
-                    Text("Convert")
+                    Text(LocalizedStringKey("Convert"))
                         .padding()
                         .background(Color.blue)
                         .cornerRadius(12)
