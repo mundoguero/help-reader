@@ -59,10 +59,9 @@ struct ScanResultView: View {
                 .padding()
             }
             //HTMLView(text: $viewModel.webContent)
-            NavigationLink(destination: ConvertedTextView(htmlContent: convertedHTMLContent), isActive: $isShowingConvertedText) {
-                            EmptyView()
-                        }
-            .hidden()
+        }
+        .navigationDestination(isPresented: $isShowingConvertedText) {
+            ConvertedTextView(htmlContent: convertedHTMLContent)
         }
         .onChange(of: viewModel.webContent) { newValue in
             convertedHTMLContent = newValue

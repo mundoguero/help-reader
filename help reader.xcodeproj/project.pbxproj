@@ -28,6 +28,11 @@
 		49A1723E2A0E3F97009D7838 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A1723D2A0E3F97009D7838 /* MainView.swift */; };
 		49A172402A0E3F99009D7838 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A1723F2A0E3F99009D7838 /* Assets.xcassets */; };
 		49A172432A0E3F99009D7838 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A172422A0E3F99009D7838 /* Preview Assets.xcassets */; };
+		49B3C0E12FC375D800555690 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B3C0E02FC375D800555690 /* Config.swift */; };
+		49B3C0E32FC375FA00555690 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49B3C0E22FC375FA00555690 /* Secrets.plist */; };
+		49B3C0E52FC3760700555690 /* Secrets.plist.template in Resources */ = {isa = PBXBuildFile; fileRef = 49B3C0E42FC3760700555690 /* Secrets.plist.template */; };
+		49B3C0E72FC3761500555690 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 49B3C0E62FC3761500555690 /* .gitignore */; };
+		49B3C0E92FC3784E00555690 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 49B3C0E82FC3784E00555690 /* README.md */; };
 		49D0FE682A2B5FBF00B69F58 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 49D0FE672A2B5FBF00B69F58 /* SF-Pro-Rounded-Bold.otf */; };
 		49D7EA172A39D1A600E44C49 /* ConvertedTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7EA162A39D1A600E44C49 /* ConvertedTextViewModel.swift */; };
 		49D7F18B2A3321850046617F /* CongratsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F18A2A3321850046617F /* CongratsView.swift */; };
@@ -71,6 +76,11 @@
 		49A1723D2A0E3F97009D7838 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		49A1723F2A0E3F99009D7838 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49A172422A0E3F99009D7838 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		49B3C0E02FC375D800555690 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		49B3C0E22FC375FA00555690 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
+		49B3C0E42FC3760700555690 /* Secrets.plist.template */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Secrets.plist.template; sourceTree = "<group>"; };
+		49B3C0E62FC3761500555690 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		49B3C0E82FC3784E00555690 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		49D0FE662A2B178600B69F58 /* help-reader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "help-reader-Info.plist"; sourceTree = SOURCE_ROOT; };
 		49D0FE672A2B5FBF00B69F58 /* SF-Pro-Rounded-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Rounded-Bold.otf"; sourceTree = "<group>"; };
 		49D7EA162A39D1A600E44C49 /* ConvertedTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertedTextViewModel.swift; sourceTree = "<group>"; };
@@ -115,6 +125,11 @@
 				495E582C2A2F31FF00317548 /* EnglishView.swift */,
 				495E582E2A2F322900317548 /* ScienceView.swift */,
 				4988A1AD2A1629EA000E049E /* HTMLView.swift */,
+				49B3C0E02FC375D800555690 /* Config.swift */,
+				49B3C0E22FC375FA00555690 /* Secrets.plist */,
+				49B3C0E42FC3760700555690 /* Secrets.plist.template */,
+				49B3C0E62FC3761500555690 /* .gitignore */,
+				49B3C0E82FC3784E00555690 /* README.md */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -298,10 +313,14 @@
 				495E58252A2F20B700317548 /* school-material.json in Resources */,
 				49D0FE682A2B5FBF00B69F58 /* SF-Pro-Rounded-Bold.otf in Resources */,
 				495E581F2A2DD19000317548 /* applauso.json in Resources */,
+				49B3C0E92FC3784E00555690 /* README.md in Resources */,
+				49B3C0E72FC3761500555690 /* .gitignore in Resources */,
 				493178452B457B0400975409 /* Localizable.strings in Resources */,
 				495E58192A2DCF4B00317548 /* acquire.json in Resources */,
+				49B3C0E32FC375FA00555690 /* Secrets.plist in Resources */,
 				49A172432A0E3F99009D7838 /* Preview Assets.xcassets in Resources */,
 				49A172402A0E3F99009D7838 /* Assets.xcassets in Resources */,
+				49B3C0E52FC3760700555690 /* Secrets.plist.template in Resources */,
 				495E58222A2F1E8E00317548 /* personal-books.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -325,6 +344,7 @@
 				495E582D2A2F31FF00317548 /* EnglishView.swift in Sources */,
 				49D7EA172A39D1A600E44C49 /* ConvertedTextViewModel.swift in Sources */,
 				495E58312A2F324A00317548 /* AddMore.swift in Sources */,
+				49B3C0E12FC375D800555690 /* Config.swift in Sources */,
 				4988A1AE2A1629EA000E049E /* HTMLView.swift in Sources */,
 				49A1723C2A0E3F97009D7838 /* help_readerApp.swift in Sources */,
 				49ED21562A24B8A500CB7B04 /* CameraScannerViewController.swift in Sources */,
@@ -536,7 +556,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"help reader/Preview Content\"";
-				DEVELOPMENT_TEAM = 6TP858ZLR2;
+				DEVELOPMENT_TEAM = M68NK62DE3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "help-reader-Info.plist";
@@ -574,7 +594,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"help reader/Preview Content\"";
-				DEVELOPMENT_TEAM = 6TP858ZLR2;
+				DEVELOPMENT_TEAM = M68NK62DE3;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "help-reader-Info.plist";
