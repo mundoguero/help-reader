@@ -25,7 +25,7 @@ class MainViewModel: ObservableObject {
     func makePOSTRequest() {
         let headers = [
             "content-type": "application/x-www-form-urlencoded",
-            "X-RapidAPI-Key": "***REMOVED***",
+            "X-RapidAPI-Key": Config.rapidAPIKey,
             "X-RapidAPI-Host": "bionic-reading1.p.rapidapi.com"
         ]
         
@@ -80,5 +80,4 @@ class MainViewModel: ObservableObject {
         return textToConvert.count >= 3
     }
 }
-
 
