@@ -63,9 +63,9 @@ struct ConvertedTextView: View {
                 }
                 .padding()
             }
-            NavigationLink(destination: CongratsView(), isActive: $isShowingCongratsView) {
-                EmptyView()
-            }
+        }
+        .navigationDestination(isPresented: $isShowingCongratsView) {
+            CongratsView()
         }
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
