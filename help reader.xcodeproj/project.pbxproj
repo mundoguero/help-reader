@@ -30,7 +30,6 @@
 		49A172432A0E3F99009D7838 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49A172422A0E3F99009D7838 /* Preview Assets.xcassets */; };
 		49B3C0E12FC375D800555690 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B3C0E02FC375D800555690 /* Config.swift */; };
 		49B3C0E52FC3760700555690 /* Secrets.plist.template in Resources */ = {isa = PBXBuildFile; fileRef = 49B3C0E42FC3760700555690 /* Secrets.plist.template */; };
-		49B3C0E72FC3761500555690 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 49B3C0E62FC3761500555690 /* .gitignore */; };
 		49B3C0E92FC3784E00555690 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 49B3C0E82FC3784E00555690 /* README.md */; };
 		49B401612FC4E24B00C920E2 /* Secrets.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49B401602FC4E24B00C920E2 /* Secrets.plist */; };
 		49D0FE682A2B5FBF00B69F58 /* SF-Pro-Rounded-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 49D0FE672A2B5FBF00B69F58 /* SF-Pro-Rounded-Bold.otf */; };
@@ -78,7 +77,6 @@
 		49A172422A0E3F99009D7838 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		49B3C0E02FC375D800555690 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		49B3C0E42FC3760700555690 /* Secrets.plist.template */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = Secrets.plist.template; sourceTree = "<group>"; };
-		49B3C0E62FC3761500555690 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		49B3C0E82FC3784E00555690 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		49B401602FC4E24B00C920E2 /* Secrets.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Secrets.plist; sourceTree = "<group>"; };
 		49D0FE662A2B178600B69F58 /* help-reader-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "help-reader-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -128,7 +126,6 @@
 				49B3C0E02FC375D800555690 /* Config.swift */,
 				49B401602FC4E24B00C920E2 /* Secrets.plist */,
 				49B3C0E42FC3760700555690 /* Secrets.plist.template */,
-				49B3C0E62FC3761500555690 /* .gitignore */,
 				49B3C0E82FC3784E00555690 /* README.md */,
 			);
 			path = Views;
@@ -315,7 +312,6 @@
 				495E581F2A2DD19000317548 /* applauso.json in Resources */,
 				49B401612FC4E24B00C920E2 /* Secrets.plist in Resources */,
 				49B3C0E92FC3784E00555690 /* README.md in Resources */,
-				49B3C0E72FC3761500555690 /* .gitignore in Resources */,
 				493178452B457B0400975409 /* Localizable.strings in Resources */,
 				495E58192A2DCF4B00317548 /* acquire.json in Resources */,
 				49A172432A0E3F99009D7838 /* Preview Assets.xcassets in Resources */,
